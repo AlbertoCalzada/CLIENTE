@@ -1,0 +1,3 @@
+fecha.indexOf("25/12") ==true
+
+busca en el string fecha el siguiente texto y si lo encuentra ..

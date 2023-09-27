@@ -1,0 +1,1 @@
+alert("Segunda prueba de JavaScript");

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imagen</title>
+    <style>
+        table {
+            border: solid 1px;
+            margin: auto;
+            text-align: center;
+        }
+
+        div {
+            margin: auto;
+            text-align: center;
+        }
+
+    </style>
+    <script>
+        var fotos = ['./img/squirtle.png', './img/charmander.png', './img/snorlax.png', './img/rayquaza.png'];
+
+        var Actual = 0;
+
+        function Siguiente() {
+            Actual = (Actual + 1) % fotos.length;
+            document.visor.src = fotos[Actual];
+        }
+
+        function Anterior() {
+            Actual = (Actual - 1 + fotos.length) % fotos.length;
+            document.visor.src = fotos[Actual];
+        }
+
+        function Ultima() {
+            Actual = fotos.length - 1;
+            document.visor.src = fotos[Actual];
+        }
+
+        function Primera() {
+            Actual = 0;
+            document.visor.src = fotos[Actual];
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+        <table>
+            <tr>
+                <td>
+                    <img src="./img/squirtle.png" name="visor" width="150" height="150">
+                </td>
+            </tr>
+            <tr>
+                <td><input type="button" onclick="Primera()" value=">>"></td>
+                <td><input type="button" onclick="Anterior()" value="<<"></td>
+                <td><input type="button" onclick="Siguiente()" value=">>|"></td>
+                <td><input type="button" onclick="Ultima()" value="<<|"></td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>

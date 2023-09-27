@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+</head>
+
+<body>
+    <!--<noscript>
+        <p>Bienvenido a Mi Sitio</p>
+        <p>La página que estás viendo requiere para su funcionamiento el uso de JavaScript.
+            Si lo has deshabilitado intencionadamente, por favor vuelve a activarlo.</p>
+    </noscript>    -->
+    <!--
+    <script>
+        var numero1 = 5;
+        var numero2 = 8;
+        if (numero1 < numero2) {
+            alert("numero1 no es mayor que numero2");
+        }
+        if (numero2 >= 0) {
+            alert("numero2 es positivo");
+        }
+        if (numero1 < 0 || numero1 != 0) {
+            alert("numero1 es negativo o distinto de cero");
+        }
+        if (numero1 + 1 < numero2) {
+            alert("Incrementar en 1 unidad el valor de numero1 no lo hace mayor o igual que numero2");
+        }
+    </script>
+    -->
+    <!--
+        El factorial de un número entero n es una operación matemática que consiste en multiplicar todos los factores n x (n-1) x (n-2) x ... x 1. 
+Así, el factorial de 5 (escrito como 5!) es igual a: 5! = 5 x 4 x 3 x 2 x 1 = 120
+Utilizando la estructura for, crear un script que calcule el factorial de un número entero
+
+    -->
+    <script type="text/javascript">
+
+        /* var numero = parseInt(prompt("Introduce el número del cuál quieres saber su factorial: "));
+         alert(typeof (numero));
+         for (var i = numero - 1; i > 0; --i) {
+             numero = numero * i;
+ 
+         }
+         document.write(numero);*/
+    </script>
+    <!--
+4. Desarrollar un script que codifique:
+a. - Declarar una variable e inicializarla a 0.
+b. - Sumar a esa variable un número aleatorio del 1 al 100 hasta que sumemos 1.000 o más, imprimiendo el valor de la variable suma después de cada operación. -Será necesario utilizar el bucle WHILE porque no sabemos exactamente el número de iteraciones que tendremos que realizar. 
+-Usar para obtener el número aleatorio parseInt(Math.random() * 100).
+-->
+
+    <script>
+        /*
+        var numero = 0;
+        while (numero < 1000) {
+            var randomNumber = parseInt(Math.random() * 100)
+            numero=numero+randomNumber;
+            document.write(numero+"<br>");
+        }*/
+    </script>
+
+    <!--
+5. Visualizar con for los números del 0 al 9 y en cada iteración del bucle preguntar al usuario si desea continuar.
+ Si el usuario dice cualquier cosa 
+continuará  la ejecución del bucle, cuando introduzca "no" se sale del bucle 
+y deja de ejecutar el bucle donde se ha quedado.
+   
+<script>
+    for(var i=0;i<=9;++i)
+    {
+        var pregunta=prompt("Quieres continuar?");
+        if(pregunta=="no")
+        {
+           break;
+        }
+        document.write(i);
+    }
+</script> -->
+    <!--
+
+    6. Imprimir en la página 
+    las todas las tablas de multiplicar. Del 1 al 9, es decir, la tabla del 1, la del 2, del 3...
+
+<script>
+    for(var i=1;i<=9;++i)
+    {
+        for(var z=0;z<=9;++z)
+        {
+            var resultado=i*z;
+            document.write("Tabla del "+i+ " :"+ i+" x "+ z+ " = "+ (resultado)+"<br>")
+        }
+    }
+</script>
+-->
+    <!--7. Se trata de hacer un bucle que escriba en una página web los encabezamientos desde <H1> hasta 
+    <H6> con un texto que ponga "Encabezado de nivel x".
+Lo que deseamos escribir en una página web mediante Javascript es lo siguiente:
+<H1>Encabezado de nivel 1</H1>
+<H2>Encabezado de nivel 2</H2>
+<H3>Encabezado de nivel 3</H3>
+<H4>Encabezado de nivel 4</H4>
+<H5>Encabezado de nivel 5</H5>
+<H6>Encabezado de nivel 6</H6>
+
+<script>
+    for(var i=1;i<=6;++i)
+    {
+        document.write("<H" + i + ">Encabezado de nivel " +i+" </H"+ i +">");
+    }
+    
+</script>
+-->
+    <!--
+    8. Codificar con switch un script para indicar que día de la semana es.
+Si el día es 1 (lunes) sacar un mensaje indicándolo, si el día es 2 (martes) 
+debemos sacar un mensaje distinto y así sucesivamente para cada día de la semana, 
+menos en el 6 (sábado) y 7 (domingo) que queremos mostrar el mensaje "es fin de semana".
+Para días mayores que 7 indicaremos que ese día no existe.
+
+
+<script>
+    var dia=parseInt(prompt("Que dia es"));
+    switch(dia)
+    {
+        case 1:
+            document.write("Es Lunes");
+            break;
+        case 2:
+        document.write("Es Martes");
+            break;
+        case 3:
+        document.write("Es Miercoles");
+            break;
+        case 4:
+        document.write("Es Jueves");
+            break;
+        case 5:
+        document.write("Es Viernes");
+            break;
+        case 6:
+        document.write("Es fin de semana");
+            break;
+        case 7:
+        document.write("Es fin de semana");
+            break;
+    }
+    
+</script>
+-->
+
+    <!--
+9. Ejercicio simplificado del carrito de la compra (venta).
+Primero el script debe comprobar si el cliente tiene crédito para 
+realizar una supuesta compra. El crédito inicial es 1000 Euros.
+Para ello comprobar si el crédito es mayor o igual que el precio del artículo, 
+si es así informar de la compra, introducir el artículo en el carrito y restar el precio al crédito.
+Si el precio del artículo es superior al dinero disponible informar de la situación 
+y mandar al navegador la página donde se muestra su carrito de la compra.
+
+-->
+
+<script>
+    var credito = 1000;
+    var precioArticulo = 0;
+
+    while (credito >= 0) {
+        precioArticulo = parseInt(prompt("Introduce el precio de tu producto a comprar: "));
+        
+        if (precioArticulo > 0) {
+            if (credito >= precioArticulo) {
+                document.write("Has comprado el artículo. ");
+                credito = credito - precioArticulo;
+                var continuarComprando = confirm("¿Deseas comprar más productos?");
+                
+                if (!continuarComprando) {
+                    break;
+                }
+            } else {
+                document.write("No tienes dinero suficiente para este artículo. ");
+            }
+        } else {
+            document.write("Por favor, introduce un precio válido. ");
+        }
+    }
+
+    document.write("Tienes de saldo: " + credito);
+</script>
+
+</body>
+
+</html>
