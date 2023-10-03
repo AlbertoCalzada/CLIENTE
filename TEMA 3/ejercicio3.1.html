@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema 3</title>
+</head>
+
+<body>
+    <!--1. Cree una página web con un script que calcule los milisegundos 
+        que han pasado desde las 00:00 del 1 de enero del 2000 hasta la fecha actual.
+
+        <script>
+            var actual= new Date();
+            var pasado= new Date(2000,1,1);
+            alert("Fecha actual : "+actual);
+            alert("Fecha pasado : "+pasado);
+            alert("Cantidad de milisegundos desde el 01/01/2000 :"+(actual-pasado));
+            
+        </script>
+        -->
+
+    <!--2. Cree una página web que solicite una cadena de texto 
+            al usuario y devuelva la longitud de dicha cadena.
+
+            <script>
+                var cadenaDeTexto= prompt("Introduce una cadana de texto :");
+                document.write("La cadena de texto tiene una longitud de :"+cadenaDeTexto.length);
+            </script>
+            -->
+    <!--3. Cree un script que recoja el valor de la anchura y la altura total de la 
+                pantalla del usuario y 
+                calcule su diagonal. Recuerde: diagonal=√(〖anchura〗^2+〖altura〗^2 ).
+        <script>
+
+            var width= window.screen.width;
+            var height= window.screen.height;
+            document.write("Ancho: "+width+"<br>");
+            document.write("Alto :" +height+"<br>");
+            var diagonal=Math.sqrt(Math.pow(width, 2) + Math.pow(height, 2));
+            document.write("La diagonal es : "+diagonal);
+
+        </script>
+
+        -->
+
+    <!--4. Cree una página web que establezca las siguientes propiedades 
+            del objeto Document: color del texto = blanco, 
+            color de fondo = gris y título 
+            del documento = “Modificaciones del objeto Document”.
+
+    <script>
+
+        
+        document.body.style.color = 'white';
+
+       
+        document.body.style.backgroundColor = 'grey';
+
+        document.write("Probando la letra");
+        document.title = 'Modificaciones del objeto Document';
+
+    </script>-->
+
+    <!--5. Crear una página que muestre información sobre una cadena de texto que se le pide al usuario. 
+        A partir de la cadena que se le pide, la función determina 
+        si esa cadena está formada sólo por mayúsculas, sólo por minúsculas
+         o por una mezcla de ambas.
+
+    <script>
+        var cadenaDeTexto = prompt("Introduce una cadana de texto :");
+       
+        LeyendoCadena(cadenaDeTexto);
+
+        function LeyendoCadena(string) {
+            
+                if(string==string.toLowerCase())
+                {
+                    document.write("Esta formado solo por minusculas.")
+                }else if(string==string.toUpperCase())
+                {
+                    document.write("Esta formado solo por mayusculas.")
+                }else{
+                    document.write("Esta formado  por mayusculas y minusculas.")
+                }
+                
+            
+        }
+    </script>
+    -->
+
+    <!--6. Determinar en una página web si la cadena de texto que se le pide 
+        es un palíndromo, es decir, si se lee de la misma forma desde la izquierda 
+        y desde la derecha.
+    Ejemplo de palíndromo complejo: "La ruta nos aporto otro paso natural".
+        -->
+
+        <script>
+             var cadenaDeTexto = prompt("Introduce una cadana de texto :");
+
+             
+        </script>
+
+</body>
+
+</html>
