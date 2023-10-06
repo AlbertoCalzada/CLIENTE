@@ -94,13 +94,29 @@
         es un palíndromo, es decir, si se lee de la misma forma desde la izquierda 
         y desde la derecha.
     Ejemplo de palíndromo complejo: "La ruta nos aporto otro paso natural".
-        -->
+        
 
-        <script>
-             var cadenaDeTexto = prompt("Introduce una cadana de texto :");
-
-             
-        </script>
+    <script>
+        var cadenaDeTexto = prompt("Introduce una cadena de texto :");
+        
+        
+        var cadenaSinEspacios = cadenaDeTexto.split(" ").join("").toLowerCase();
+        var cadenaInvertida = "";
+        for (var i = cadenaSinEspacios.length - 1; i >= 0; --i) {
+            cadenaInvertida += cadenaSinEspacios[i];
+        }
+    
+        document.write("Palabra 1: " + cadenaSinEspacios + "<br>");
+        document.write("Palabra 2: " + cadenaInvertida + "<br>");
+    
+        if (cadenaSinEspacios === cadenaInvertida) {
+            document.write("La cadena es palíndroma.");
+        } else {
+            document.write("La cadena no es palíndromas.");
+        }
+    </script>
+    -->
+    
 
 </body>
 

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3.2</title>
+</head>
+
+<body>
+
+    <!--1.- Realizar el ejercicio
+         de la tabla de multiplicar de manera  que ahora se pida el número de la tabla a mostrar
+    
+    <script>
+        var numero = parseInt(prompt("Escribe el número de la tabla de multiplicar que quieres ver:"));
+        
+        for (var i = 1; i <= 10; i++) {
+            var resultado = numero * i;
+            document.write("Tabla del " + numero + " : " + numero + " x " + i + " = " + resultado + "<br>");
+        }
+    </script>
+    -->
+
+    <!--Ejercicio 2 La fórmula matemática (no es sencilla) es la siguiente:
+
+	PagoMensual =  (ValorHipoteca * Interes)   / (    1 – (1 / ( 1 + interes)) ^  (periodos* 12)   )
+
+Donde: 
+
+-	PagoMensual 	=  Pago que se efectuará cada mes durante el tiempo de amortización de la hipoteca.
+-	ValorHipoteca 	=  Cantidad prestada.
+-	Interés 	        	=  Interés mensual en tanto por uno  = InteresAnual / (12 * 100)
+-	Periodos 		=  Es  el número de años del préstamo.
+
+Los datos que nosotros debemos introducir son:
+
+-	El valor del préstamo.
+-	El Interés anual.
+-	El número de años a devolver.
+
+
+
+    <script>
+        var numeroAnyos, prestamo, interesAnual, pagoMensual, interes;
+        numeroAnyos = parseInt(prompt("Introduce el numero de años del prestamo"));
+        interesAnual = parseInt(prompt("Introduce el interes anual"));
+        interes = interesAnual / 1200;
+        prestamo = parseFloat(prompt("Introduce el valor del prestamo"));
+        pagoMensual = (prestamo * interes) / (1 - Math.pow((1 + interes), -(numeroAnyos * 12)));
+        document.write("El pago mensual que debes efectuar es de : " + pagoMensual);
+        
+    </script>
+
+    -->
+
+    <!--3.- Ejercicio. Juego  piensa un nº entre 1 y 1000:
+
+Cuando se muestren las respuestas del ordenador debe aparecer uno de estos  4 mensajes:
+
+“Has acertado el número en X intentos”.
+
+“Has perdido. Llevas 10 intentos”.
+
+“El número es menor de N. Llevas X intentos”.
+
+“El número es mayor de N.  Llevas X intentos.
+
+-->
+    <script>
+        alert("Adivina el numero. Piensa un número entre el 1 y el 100");
+        const randomNumber = Math.floor(Math.random() * 100) + 1;
+        /*alert(randomNumber);*/
+        var numeroPensado = parseInt(prompt("Introducelo :"));
+        var intentos = 1;
+        while (numeroPensado != randomNumber || intentos <= 10) {
+            if (intentos <= 10) {
+                if (numeroPensado < randomNumber) {
+                    alert("El numero a adivinar es mayor que " + numeroPensado + " . Llevas " + intentos + " intento/s");
+                } else if (numeroPensado > randomNumber) {
+                    alert("El numero a adivinar es menor que " + numeroPensado + " . Llevas " + intentos + " intento/s");
+                } else if (numeroPensado == randomNumber) {
+                    alert("Felicidades!! Has adivinado el número, era: " + randomNumber);
+                }
+                numeroPensado = parseInt(prompt("Prueba otra vez :"));
+            } else {
+                alert("Has perdido. Llevas 10 intentos");
+            }
+
+
+            ++intentos;
+        }
+    </script>
+</body>
+
+</html>
