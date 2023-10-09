@@ -1,11 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <style>
+        .digitalcolonimg {
+            width: 3px;
+        }
+
+        .inline {
+            display: inline;
+            width: auto;
+        }
+    </style>
 </head>
+
 <body>
-    
+    <!--<script>
+        
+        var fechaActual = new Date();
+
+        var año = fechaActual.getFullYear();
+        var mes = fechaActual.getMonth() + 1; 
+        var dia = fechaActual.getDate();
+   
+        var diasSemana = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
+        var diaSemana = diasSemana[fechaActual.getDay()];
+
+        document.write(`Año: ${año}, Mes: ${mes}, Día: ${dia}, Día de la semana: ${diaSemana}`);
+
+    </script>-->
+    <img src="./imagenes/DIGITAL0.GIF" alt="cero" hidden>
+    <img src="./imagenes/DIGITAL1.GIF" alt="1" hidden>
+    <img src="./imagenes/DIGITAL2.GIF" alt="2" hidden>
+    <img src="./imagenes/DIGITAL3.GIF" alt="3" hidden>
+    <img src="./imagenes/DIGITAL4.GIF" alt="4" hidden>
+    <img src="./imagenes/DIGITAL5.GIF" alt="5" hidden>
+    <img src="./imagenes/DIGITAL6.GIF" alt="6" hidden>
+    <img src="./imagenes/DIGITAL7.GIF" alt="7" hidden>
+    <img src="./imagenes/DIGITAL8.GIF" alt="8" hidden>
+    <img src="imagenes/DIGITAL9.GIF" alt="9" hidden>
+    <img src="imagenes/digitalcolon.gif" alt=":" hidden>
+
+    <div class="inline">
+        <input type="text">
+        <input type="text">
+        <input class="digitalcolonimg" type="text" id="digitalcolon">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+    </div>
+
+    <script>
+        var digitalcolon = document.getElementById("digitalcolon");
+        digitalcolon.style.backgroundImage = "url('imagenes/digitalcolon.gif')";
+        var fechaActual = new Date();
+        var hora = fechaActual.getHours();
+        var minutos = fechaActual.getMinutes();
+        var segundos = fechaActual.getSeconds();
+
+        document.write(hora);
+        document.write(minutos);
+        document.write(segundos);
+
+
+    </script>
+
+    <script>
+        function Hora(tiempo,idimg1) {
+
+            if (tiempo < 9) {
+                var primera = 0;
+                segunda = tiempo;
+                var fecha = document.getElementById("idimg1");
+                digitalcolon.style.backgroundImage = "url('imagenes/digitalcolon.gif')";
+
+            }
+
+
+
+
+
+        }
+    </script>
+
+
+
+
+    <script>
+
+    </script>
+
 </body>
+
 </html>
