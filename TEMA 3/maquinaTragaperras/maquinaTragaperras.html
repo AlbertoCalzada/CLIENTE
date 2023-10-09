@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Máquina Tragaperras</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Máquina Tragaperras</h1>
+        </div>
+        <div class="input-group">
+            <input type="text" name="" id="ven1" readonly>
+            <input type="text" name="" id="ven2" readonly>
+            <input type="text" name="" id="ven3" readonly>
+        </div>
+        <div class="button-group">
+            <button id="play-button" onclick="Generar()">Jugar</button>
+        </div>
+        <input type="text" name="" id="bandeja" readonly>
+    </div>
+    <script>
+        var num = 0;
+        var dinero = 100;
+        var premio = 0;
+        var contador = 0;
+        var ven1 = document.getElementById("ven1");
+        var ven2 = document.getElementById("ven2");
+        var ven3 = document.getElementById("ven3");
+        var bandeja = document.getElementById("bandeja");
+        ven1.value = num;
+        ven2.value = num;
+        ven3.value = num;
+        bandeja.value = dinero;
+
+        function Generar() {
+            dinero--;
+            premio=0;
+            var num1 = Math.floor(Math.random() * 10);
+            var num2 = Math.floor(Math.random() * 10);
+            var num3 = Math.floor(Math.random() * 10);
+
+            ven1.value = num1;
+            ven2.value = num2;
+            ven3.value = num3;
+
+            if (num1 == 7) {
+                contador++;
+            }
+            if (num2 == 7) {
+                contador++;
+            }
+            if (num3 == 7) {
+                contador++;
+            }
+
+            if (contador == 0) {
+                premio += 0;
+            } else if (contador == 1) {
+                premio += 1;
+            } else if (contador == 2) {
+                premio += 5;
+            } else if (contador == 3) {
+                premio += 50;
+            }
+
+            dinero += premio;
+            bandeja.value = dinero;
+        }
+    </script>
+</body>
+
+</html>
