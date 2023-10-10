@@ -60,3 +60,10 @@ body {
     border-radius: 3px;
     margin: 20px auto;
 }
+
+input[type="text"]{
+    font-weight: bold;
+    
+}
+
+

@@ -27,7 +27,7 @@
         var num = 0;
         var dinero = 100;
         var premio = 0;
-        var contador = 0;
+        
         var ven1 = document.getElementById("ven1");
         var ven2 = document.getElementById("ven2");
         var ven3 = document.getElementById("ven3");
@@ -40,6 +40,7 @@
         function Generar() {
             dinero--;
             premio=0;
+            var contador = 0;
             var num1 = Math.floor(Math.random() * 10);
             var num2 = Math.floor(Math.random() * 10);
             var num3 = Math.floor(Math.random() * 10);
