@@ -8,11 +8,10 @@ cadena de izquierda a derecha:
 ”1...........................................................................23”
 */
 
-function DNI()
-{
-    var dni=parseInt(prompt("Introduce el DNI"));
-    var resto=(dni%23);
-    
+function DNI() {
+    var dni = parseInt(prompt("Introduce el DNI"));
+    var resto = (dni % 23);
+
     switch (resto) {
         case 0:
             document.write('Tu DNI es ' + dni + 'T');
@@ -116,14 +115,14 @@ ni que pueda haber blancos al principio y final
 }*/
 function contarPalabras() {
     var frase = prompt("Escribe una frase:").trim(); // Eliminar espacios en blanco al principio y final
-    var palabras = 0; 
+    var palabras = 0;
 
-   
+
     if (frase.length > 0) {
 
         var palabrasArray = frase.split(" ");
 
-       
+
         for (var i = 0; i < palabrasArray.length; i++) {
             if (palabrasArray[i].trim() !== "") {
                 palabras++;
@@ -136,28 +135,24 @@ function contarPalabras() {
 
 /* 3.- Comprobar que una cadena solo contiene cifras 0, 1, 3, 4, 5, 6, 7, 8, 9*/
 
-function comprobarCadena() 
-{
+function comprobarCadena() {
     var frase = prompt("Escribe una cadena: ");
-    var exit=true;
+    var exit = true;
 
-    for (let index = 0; index < frase.length; index++) 
-    {
-       
-       if(isNaN(frase[index]))
-       {
+    for (let index = 0; index < frase.length; index++) {
+
+        if (isNaN(frase[index])) {
             document.write("No es una cadena formado solo por numeros.");
-            exit=false;
+            exit = false;
             break;
-            
-       }
-        
+
+        }
+
     }
-    if(exit==true)
-    {
+    if (exit == true) {
         document.write("Es una cadena formado solo por numeros.");
     }
-    
+
 }
 
 /* 4.- Comprobar que una cadena solo contiene letras y/o espacios en blanco.
@@ -168,20 +163,20 @@ Para estos dos ejercicios (3 y 4) puede ser interesante conocer los rangos ASCII
 Letras mayúsculas:		De 65 a 90.
 Letras minúsculas:		De 97 a 122.
 Números:		De 48 a 57.
-	Blanco			32.
+    Blanco			32.
 
 */
 
 function comprobarLetra() {
     var frase = prompt("Escribe una cadena: ");
-  
+
     if (/^[a-zA-Z\s]*$/.test(frase)) {
-      document.write("La cadena contiene solo letras y/o espacios en blanco.");
+        document.write("La cadena contiene solo letras y/o espacios en blanco.");
     } else {
-      document.write("La cadena contiene caracteres diferentes a letras y espacios en blanco.");
+        document.write("La cadena contiene caracteres diferentes a letras y espacios en blanco.");
     }
-  }
-  
+}
+
 
 /* 5.- Crear las funciones típicas de cualquier lenguaje:
 
@@ -219,24 +214,23 @@ la izquierda y derecha que pudiese tener cadena original.
 
 }*/
 
-function creandoTrim() 
-{
+function creandoTrim() {
     var cadena = prompt("Escribe una cadena: ");
     var nuevaCadena = "";
     var inicio = 0;
     var fin = cadena.length - 1;
 
-    // Elimina los espacios en blanco a la izquierda
+
     while (inicio < cadena.length && cadena[inicio] === ' ') {
         inicio++;
     }
 
-    // Elimina los espacios en blanco a la derecha
+
     while (fin >= 0 && cadena[fin] === ' ') {
         fin--;
     }
 
-    // Construye la nueva cadena sin espacios en blanco
+
     for (var i = inicio; i <= fin; i++) {
         nuevaCadena += cadena[i];
     }
@@ -244,5 +238,39 @@ function creandoTrim()
     document.write("Cadena original: '" + cadena + "'");
     document.write("Cadena recortada: '" + nuevaCadena + "'");
 }
+
+function Redondeo() {
+    var numero = parseFloat(prompt("Introduce un número"));
+    var decimales = parseInt(prompt("Introduce la cantidad de decimales"));
+
+    var redondeado;
+    
+
+    redondeado = numero.toFixed(decimales);
+
+
+    document.write("El número redondeado es: " + redondeado);
+}
+
+/* 8.- Crear una tabla cuadrada con los códigos ASCII del 0 a 155:
+
+Los encabezamientos de filas y columnas deben ir en hexadecimal de 0 a F (0 a 15), 
+la intersección de fila y columna en la tabla nos debe dar el numero ASCII 
+correspondiente (0 a 255 o sea de 00 a FF).
+Para resolver este ejercicio se debe hacer uso del siguiente método 
+que devuelve el carácter ASCII de un código correspondiente entre 0 y 255.
+
+String.fromCharCode(codigoASCII)
+
+Var Dato = String.fromCharCode(65) // Devuelve “A” en la variable Dato.
+
+*/
+
+function Tabla() 
+{
+    var Dato = String.fromCharCode(65);
+}
+
+
 
 

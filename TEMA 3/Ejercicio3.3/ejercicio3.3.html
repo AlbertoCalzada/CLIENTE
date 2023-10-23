@@ -5,7 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicio 3.3</title>
-
+    <style>
+        table tr td{
+            border:1px solid black;
+        }
+    </style>
 </head>
 
 <body>
@@ -15,6 +19,43 @@
     <button onclick="comprobarCadena()">Ejercicio 3</button>
     <button onclick="comprobarLetra()">Ejercicio 4</button>
     <button onclick="creandoTrim()">Ejercicio 6</button>
+    <button onclick="Redondeo()">Redondeo</button>
+    <br>
+    <table>
+        <tr>
+            <th></th> 
+            <th>0</th>
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+            <th>4</th>
+            <th>5</th>
+            <th>6</th>
+            <th>7</th>
+            <th>8</th>
+            <th>9</th>
+            <th>A</th>
+            <th>B</th>
+            <th>C</th>
+            <th>D</th>
+            <th>E</th>
+            <th>F</th>
+        </tr>
+        <script>
+            for (var i = 0; i < 16; i++) {
+                document.write("<tr>");
+                document.write("<th>" + i.toString(16).toUpperCase() + "</th>"); 
+                for (var j = 0; j < 16; j++) {
+                    var asciiCode = i * 16 + j;
+                    document.write("<td>" + String.fromCharCode(asciiCode)); 
+                }
+                document.write("</tr>");
+            }
+        </script>
+    </table>
+    
+    
+
 </body>
 
 </html>
