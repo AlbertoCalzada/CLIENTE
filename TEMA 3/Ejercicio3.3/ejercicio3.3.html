@@ -6,8 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicio 3.3</title>
     <style>
-        table tr td{
-            border:1px solid black;
+        table tr td {
+            border: 1px solid black;
+        }
+
+        table {
+            margin: auto;
+        }
+
+        .centrado {
+            margin: 50px auto;
+            text-align: center;
+        }
+        form{
+            margin:40px auto;
+            text-align: center;
         }
     </style>
 </head>
@@ -23,7 +36,7 @@
     <br>
     <table>
         <tr>
-            <th></th> 
+            <th></th>
             <th>0</th>
             <th>1</th>
             <th>2</th>
@@ -44,18 +57,40 @@
         <script>
             for (var i = 0; i < 16; i++) {
                 document.write("<tr>");
-                document.write("<th>" + i.toString(16).toUpperCase() + "</th>"); 
+                document.write("<th>" + i.toString(16).toUpperCase() + "</th>");
                 for (var j = 0; j < 16; j++) {
                     var asciiCode = i * 16 + j;
-                    document.write("<td>" + String.fromCharCode(asciiCode)); 
+                    document.write("<td>" + String.fromCharCode(asciiCode));
                 }
                 document.write("</tr>");
             }
         </script>
     </table>
-    
-    
+    <hr>
+    <script>
 
+        var fotos = ['./imagenes/contento.png', './imagenes/triste.png'];
+        var Actual = 0;
+        function Siguiente() {
+            Actual = (Actual + 1) % fotos.length;
+            document.visor.src = fotos[Actual];
+        }
+    </script>
+    <div class="centrado">
+
+
+        <img src="./imagenes/contento.png" name="visor" width="150" height="150">
+        <br>
+        <input type="button" onclick="Siguiente()" value="Siguiente"></td>
+
+    </div>
+    <hr>
+
+    <form>
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email">
+        <button type="button" onclick="ComprobarEmail()">Validar Email</button>
+    </form>
 </body>
 
 </html>

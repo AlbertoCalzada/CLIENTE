@@ -244,7 +244,7 @@ function Redondeo() {
     var decimales = parseInt(prompt("Introduce la cantidad de decimales"));
 
     var redondeado;
-    
+
 
     redondeado = numero.toFixed(decimales);
 
@@ -266,11 +266,21 @@ Var Dato = String.fromCharCode(65) // Devuelve “A” en la variable Dato.
 
 */
 
-function Tabla() 
-{
+function Tabla() {
     var Dato = String.fromCharCode(65);
 }
 
+function ComprobarEmail() {
+    var email = document.getElementById("email").value;
+    var valido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+    if (valido) {
+        alert("Email válido");
+    } else {
+        alert("Email no válido");
+    }
+
+}
 
 
 
