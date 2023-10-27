@@ -77,7 +77,7 @@ function Colores() {
 
                 document.write("</td>");
             }
-            
+
             document.write("</tr>");
         }
     }
@@ -102,7 +102,96 @@ El menor.
  */
 
 
-function Ejercicio5() 
+function Ejercicio5() {
+    var numeroIntentos = 0;
+    var suma = 0;
+    var media;
+    var mayor = 0;
+    var menor;
+
+    do {
+        var numero = parseInt(prompt("Introduce un numero"));
+
+        if (numero != 0) {
+            ++numeroIntentos;
+            suma += numero;
+            media = suma / numeroIntentos;
+            
+            if (numero > mayor) {
+                mayor = numero;
+            }
+
+            if (numeroIntentos === 1) {
+                
+                menor = numero;
+            } else if (numero < menor) {
+                menor = numero;
+            }
+            
+            alert("Llevas " + numeroIntentos + " numeros introducidos.");
+        }
+    } while (numero != 0);
+
+    alert("Has introducido: " + numeroIntentos + " numeros");
+    alert("Su media es " + media);
+    alert("El numero mayor es " + mayor);
+    alert("El numero menor es " + menor);
+}
+
+
+/* 6. Busqueda en tablas: Se trata de simular una empresa de paquetería que 
+sirve a varias ciudades de la periferia sur de Madrid, la lista ciudades y precios 
+de envío por bulto que tiene es la siguiente:
+
+Alcorcón	10
+Leganes	12
+Pinto	8
+Fuenlabrada	11
+Getafe	10
+Parla	15
+Mostoles	7
+
+En el caso de que el envío de los bultos sea a una población distinta a las indicadas,
+ el precio es para todas de 20 euros por bulto.
+Hay que hacer una página Web con JavaScript que nos calcule el importe del envío de unos bultos a una ciudad. 
+Se debe mostrar, el nombre de la ciudad, el nº de bultos, el precio por bulto y el importe total +IVA. 
+Si la ciudad no pertenece a la de la red, además la visualización contendrá una línea de observaciones.
+Mejoras: comprueba que la ciudad no esté en blanco ni que en las unidades haya un nº entero y positivo 
+y mayor que cero.
+*/
+
+
+function EmpresaPaquetes() 
+
 {
+    var precioEstandar=20;
+    var preciosCiudades = [
+        { ciudad: "Alcorcon", precio: 10 },
+        { ciudad: "Leganes", precio: 12 },
+        { ciudad: "Pinto", precio: 8 },
+        { ciudad: "Fuenlabrada", precio: 11 },
+        { ciudad: "Getafe", precio: 10 },
+        { ciudad: "Parla", precio: 15 },
+        { ciudad: "Mostoles", precio: 7 },
+        { ciudad: "Otro", precio: 20 }
+    ];
+
+    document.write("<h3>¿A donde deseas enviar?</h3> <br>");
+
+    for (let index = 0; index < preciosCiudades.length; index++) {
+        document.write(preciosCiudades[index].ciudad+ "<br>");
+        
+    }
+
+   
     
+        
+       
+    document.write("<button onclick='ElegirCiudad()'>Elegir Ciudad</button>");
+
+}
+
+function ElegirCiudad() 
+{
+    var ciudadElegida = prompt("Elige ciudad");
 }
