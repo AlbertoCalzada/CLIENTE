@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla</title>
+</head>
+
+<body>
+    <table id="miTabla">
+        <tr>
+            <td>4</td>
+            <td>2</td>
+            <td>1</td>
+            <td>3</td>
+        </tr>
+    </table>
+
+    <input type="number" id="numeroAAgregar" placeholder="Número">
+    <button onclick="agregarPorComienzo()">Añadir al Comienzo</button>
+    <button onclick="agregarPorFinal()">Añadir al Final</button>
+    <button onclick="ordenarAlfabeticamente()">Ordenar Alfabéticamente</button>
+    <button onclick="darLaVuelta()">Dar la Vuelta al Array</button>
+    <button onclick="eliminarPrimero()">Eliminar el Primero</button>
+    <button onclick="eliminarUltimo()">Eliminar el Último</button>
+    <button onclick="eliminarElementoIntermedio()">Eliminar Elemento Intermedio</button>
+
+    <script>
+        const tabla = document.getElementById("miTabla");
+
+        function obtenerNumeros() {
+            const tdElements = document.querySelectorAll("#miTabla td");
+            const numeros = [];
+
+            for (let i = 0; i < tdElements.length; i++) {
+                const numero = parseInt(tdElements[i].textContent);
+                if (!isNaN(numero)) {
+                    numeros.push(numero);
+                }
+            }
+
+            return numeros;
+        }
+
+
+        function actualizarTabla(numeros) {
+            const nuevaFila = document.createElement("tr");
+            for (const numero of numeros) {
+                const nuevaCelda = document.createElement("td");
+                nuevaCelda.textContent = numero;
+                nuevaFila.appendChild(nuevaCelda);
+            }
+            tabla.innerHTML = ""; // Limpiar la tabla
+            tabla.appendChild(nuevaFila);
+        }
+
+        function agregarPorComienzo() {
+            const numeroAAgregar = parseInt(document.getElementById("numeroAAgregar").value);
+            if (!isNaN(numeroAAgregar)) {
+                const numeros = obtenerNumeros();
+                numeros.unshift(numeroAAgregar);
+                actualizarTabla(numeros);
+            }
+        }
+
+        function agregarPorFinal() {
+            const numeroAAgregar = parseInt(document.getElementById("numeroAAgregar").value);
+            if (!isNaN(numeroAAgregar)) {
+                const numeros = obtenerNumeros();
+                numeros.push(numeroAAgregar);
+                actualizarTabla(numeros);
+            }
+        }
+
+        function ordenarAlfabeticamente() {
+            const numeros = obtenerNumeros();
+            numeros.sort((a, b) => a - b);
+            actualizarTabla(numeros);
+        }
+
+        function darLaVuelta() {
+            const numeros = obtenerNumeros();
+            numeros.reverse();
+            actualizarTabla(numeros);
+        }
+
+        function eliminarPrimero() {
+            const numeros = obtenerNumeros();
+            numeros.shift();
+            actualizarTabla(numeros);
+        }
+
+        function eliminarUltimo() {
+            const numeros = obtenerNumeros();
+            numeros.pop();
+            actualizarTabla(numeros);
+        }
+
+        function eliminarElementoIntermedio() {
+            const numeros = obtenerNumeros();
+            const indiceAEliminar = Math.floor(numeros.length / 2); 
+            numeros.splice(indiceAEliminar, 1);
+            actualizarTabla(numeros);
+        }
+    </script>
+</body>
+
+</html>

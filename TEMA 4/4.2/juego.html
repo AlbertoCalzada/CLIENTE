@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego</title>
+    <style>
+        .contenedorJuego{
+            margin: 100px auto;
+            text-align: center;
+
+        }
+        input{
+            width: 300px;
+        }
+        .inicio{
+            background-color: rgb(124, 209, 124);
+            height: 30px;
+        }
+        .detener{
+            background-color: rgb(207, 42, 42);
+            height: 30px;
+        }
+
+        .inicio:hover
+        {
+            background-color: rgb(9, 219, 9);
+          
+        }
+        .detener:hover{
+            background-color: rgb(250, 11, 11);
+            height: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="contenedorJuego">
+        <h1>Juego de Preguntas</h1>
+        <p>Pulsa "Comenzar" para iniciar el juego:</p>
+
+        <button class="inicio" onclick="comenzarJuego()">Comenzar</button>
+        <button class="detener" onclick="detenerJuego()">Detener</button>
+
+        <div>
+            <p>Pregunta:</p>
+            <input type="text" id="pregunta" disabled>
+        </div>
+        <div>
+            <p>Tiempo Restante:</p>
+            <input type="text" id="tiempoRestante" disabled>
+        </div>
+    </div>
+    <script>
+        let tiempoInicial = 15;
+        let tiempoRestante = tiempoInicial;
+        let intervalId;
+
+        function comenzarJuego() {
+            tiempoRestante = tiempoInicial; 
+            document.getElementById("pregunta").value = "¿Cuál es la capital de Francia?";
+            document.getElementById("tiempoRestante").value = tiempoRestante + " segundos";
+            clearInterval(intervalId); // Limpiar cualquier temporizador anterior
+            intervalId = setInterval(actualizarTiempo, 1000);
+        }
+
+        function detenerJuego() {
+            clearInterval(intervalId);
+            alert("Tiempo transcurrido: " + (tiempoInicial - tiempoRestante) + " segundos.");
+        }
+
+        function actualizarTiempo() {
+            tiempoRestante -= 1;
+            document.getElementById("tiempoRestante").value = tiempoRestante + " segundos";
+            if (tiempoRestante === 0) {
+                detenerJuego();
+                alert("¡Se acabó el tiempo!");
+            }
+        }
+    </script>
+</body>
+
+</html>
