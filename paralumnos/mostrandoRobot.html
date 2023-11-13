@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robot</title>
+    <style>
+        img {
+            width: 300px;
+        }
+
+        body {
+            text-align: center;
+            margin: 0 auto;
+            color: blue;
+        }
+
+        header {
+            background-color: gray;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: black;
+        }
+
+        .mensaje {
+            color: green;
+        }
+
+        .objetos h2 {
+            color: red;
+        }
+
+        .objetos pre {
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <script src="robot.js"></script>
+
+
+
+    <header>
+        <h2>Los objetos de JS: Los Robots de Star-Wars</h2>
+    </header>
+    <div class="objetos">
+        <h2>Objetos</h2>
+        <pre>Los objetos son una coleccion de propiedades y una propiedad es una asociación,
+            entre un nombre(o clave)y un valor. Un valor de propiedad puede ser una función,
+            que se denomina método del objeto. En javascript casi todo es un objeto</pre>
+    </div>
+    <div class="R2D2">
+        <h3>Probando R2D2</h3>
+
+        <img src="r2d2.jpg" alt="robot"><br>
+        <p class="mensaje">Mensafono del Robot</p>
+        <script>
+            var r1 = new Robot("R2D2", "arregla-todo", 0);
+            document.write("R2D2 <br>");
+            document.write("Tipo de Robot : Astromecanico <br>");
+            document.write("Estado del Robot(0/1) : 0 <br>");
+            document.write("R2D2->Modo Espera  <br>");
+            r1.Espera();
+            document.write("R2D2->Modo Activacion <br>");
+            r1.Activar();
+            document.write("R2D2->Modo Ayuda <br>");
+            r1.Ayuda();
+        </script>
+    </div>
+    <div class="C3PO">
+        <h3>Probando C3PO</h3>
+        <img src="c3po.jpg" alt="robot"><br>
+        <p class="mensaje">Mensafono del Robot</p>
+        <script>
+            var r2 = new Robot("C3PO", "traductor", 0);
+            document.write("C3PO <br>");
+            document.write("Tipo de Robot : Protocolo <br>");
+            document.write("Estado del Robot(0/1) : 0 <br>");
+            document.write("C3PO->Modo Espera  <br>");
+            r2.Espera();
+            document.write("C3PO->Modo Activacion <br>");
+            r2.Activar();
+            document.write("C3PO->Modo Ayuda <br>");
+            r2.Ayuda();
+        </script>
+    </div>
+
+
+</body>
+
+</html>

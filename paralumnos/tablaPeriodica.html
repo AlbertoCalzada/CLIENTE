@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulacro</title>
+    <style>
+        .resultado label {
+            display: block;
+        }
+
+        body {
+            text-align: center;
+        }
+        img{
+            width: 600px;
+        }
+    </style>
+</head>
+
+<body>
+    <script src="./scripts.js"></script>
+    <h3>Elementos de la tabla periodica en Ingles</h3>
+    <hr>
+
+    <label>Simbolo(revisa abajo)</label>
+    <input type="text" id="idsimbolo">
+
+    <button onclick="Resultado()">Obtener</button>
+
+    <hr>
+    <div class="resultado">
+        <label for="">Numero atomico</label>
+        <input id="numeroatomico" type="text" disabled>
+        <label for="">Nombre del elemento</label>
+        <input id="nombreelemento" type="text" disabled>
+        <label for="">Descubierto el año</label>
+        <input id="añodescubierto" type="text" disabled>
+    </div>
+    <hr>
+    <img src="periodic-table-7-21-optimized.svg" alt="tablaPeriodica">
+</body>
+
+</html>
+
