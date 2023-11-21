@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form label {
+            display: block;
+            margin-top: 20px;
+        }
+
+        form button {
+            margin-top: 15px;
+            margin-right: 10px;
+        }
+
+        .error {
+           
+            border: 1px solid red;
+        }
+    </style>
+    <script src="scripts.js" defer></script>
+</head>
+
+<body>
+    <form onsubmit="return Enviar()">
+        <label for="idNombre">Nombre</label>
+        <input type="text" id="idNombre" class="inputField" required>
+        <label for="idEdad">Edad</label>
+        <input type="number" id="idEdad" class="inputField" required>
+        <label for="idTelefono">Telefono</label>
+        <input type="tel" id="idTelefono" class="inputField" required>
+        <label for="idEmail">Email</label>
+        <input type="email" id="idEmail" class="inputField" required><br>
+        <button type="button" onclick="Enviar()">Enviar</button>
+        <button type="button" onclick="Limpiar()">Limpiar</button>
+    </form>
+</body>
+
+</html>
