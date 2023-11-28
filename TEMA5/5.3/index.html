@@ -6,30 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario</title>
     <style>
-        body{
+        body {
             background-color: #F4F5DB;
             font-family: Verdana;
         }
-        
-        legend{
+
+        legend {
             font-weight: bold;
         }
-        
-        #sexo{
+
+        #sexo {
             float: right;
             margin-top: -8%;
         }
-        
-        #errores{
-            color:#ff0000;
+
+        #errores {
+            color: #ff0000;
         }
-        .enviar
-        {
+
+        .enviar {
             margin-top: 10px;
         }
     </style>
     <script src="scripts.js"></script>
 </head>
+
 <body>
     <form name="datos" method="POST" enctype="multipart/form-data">
         <div id="errores"></div><br>
@@ -38,7 +39,8 @@
             <table>
                 <tr>
                     <td><span id="d_rojo">D.N.I:</span></td>
-                    <td><input type="text" id="dni" maxlength="8" size="8"> - <input type="text" size="1" id="letra" maxlength="1"></td>
+                    <td><input type="text" id="dni" maxlength="8" size="8"> - <input type="text" size="1" id="letra"
+                            maxlength="1"></td>
                 </tr>
                 <tr>
                     <td id='n_rojo'>Nombre:</td>
@@ -55,10 +57,14 @@
             </table>
             <table id="sexo">
                 <tr>
-                <td>Sexo:</td>
+                    <td>Sexo:</td>
                 </tr>
-                <tr><td><input type="radio" checked name="sexo" value="h"> Hombre</td>
-                </tr><tr><td><input type="radio" name="sexo" value="h"> Mujer</td></tr>
+                <tr>
+                    <td><input type="radio" checked name="sexo" value="h"> Hombre</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="sexo" value="h"> Mujer</td>
+                </tr>
             </table>
         </fieldset>
         <br>
@@ -89,7 +95,7 @@
             <table>
                 <tr>
                     <td>Archivo:</td>
-                    <td><input type="text" id="fichero"><input type="file" onchange="validaFichero()" id="archivo"></td>
+                    <td><input type="text" id="archivo"><input type="file" onchange="validaFichero()" id="archivo"></td>
                 </tr>
                 <tr>
                     <td><input type="checkbox" disabled id="comprimido" value="comprimido"> Archivo comprimido</td>
@@ -103,6 +109,6 @@
         </fieldset>
         <div class="enviar" align="center"><input type="button" value="Enviar" onclick="enviar()"></div>
     </form>
-</body>	
+</body>
 
 </html>
