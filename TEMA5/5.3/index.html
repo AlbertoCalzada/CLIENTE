@@ -95,7 +95,10 @@
             <table>
                 <tr>
                     <td>Archivo:</td>
-                    <td><input type="text" id="archivo"><input type="file" onchange="validaFichero()" id="archivo"></td>
+                    <td>
+                        <input type="text" id="nombreArchivo"> 
+                        <input type="file" onchange="validaFichero()" id="archivoInput"> 
+                    </td>
                 </tr>
                 <tr>
                     <td><input type="checkbox" disabled id="comprimido" value="comprimido"> Archivo comprimido</td>
@@ -107,6 +110,7 @@
                 </tr>
             </table>
         </fieldset>
+        
         <div class="enviar" align="center"><input type="button" value="Enviar" onclick="enviar()"></div>
     </form>
 </body>
