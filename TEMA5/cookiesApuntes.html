@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manejo de Cookies</title>
+</head>
+<body>
+    <script type="text/javascript">
+        // Función para crear una cookie
+        function createCookie(name, value, days) {
+            if (days) {
+                var date = new Date();  // Crear un objeto de fecha
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));  // Calcular la fecha de expiración
+                var expires = "; expires=" + date.toGMTString();  // Convertir la fecha a formato GMT
+            } else {
+                var expires = "";  // Si no se especifican días, no se establece la fecha de expiración
+            }
+            document.cookie = name + "=" + value + expires + "; path=/";  // Establecer la cookie con el nombre, valor y fecha de expiración
+        }
+
+        // Función para leer una cookie
+        function readCookie(name) {
+            var nameEQ = name + "=";  // Crear el prefijo para buscar en la cadena de cookies
+            var ca = document.cookie.split(';');  // Dividir la cadena de cookies en un array
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ')
+                    c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) == 0)
+                    return c.substring(nameEQ.length, c.length);  // Devolver el valor de la cookie si se encuentra
+            }
+            return null;  // Devolver nulo si no se encuentra la cookie
+        }
+
+        // Función para borrar una cookie
+        function eraseCookie(name) {
+            createCookie(name, "", -1);  // Crear una cookie con una fecha de expiración pasada para borrarla
+        }
+
+        // Ejemplo de uso
+        document.write("Esto es una prueba de cookies. Almacena y muestra la fecha en formato GMT del último acceso. También muestra la fecha actual.<br>");
+
+        var lastAccess = readCookie('lastAccess');  // Leer la cookie 'lastAccess'
+
+        if (lastAccess != null) {
+            document.write("Último acceso guardado: " + lastAccess + "<br>");  // Mostrar el último acceso si existe
+        }
+
+        var currentDate = new Date();  // Obtener la fecha actual
+        var currentAccess = currentDate.toGMTString();  // Convertir la fecha actual a formato GMT
+
+        createCookie('lastAccess', currentAccess, 1);  // Crear una cookie 'lastAccess' con la fecha actual y expiración en 1 día
+        // Debug: Muestra todas las cookies en la consola
+        console.log("Todas las cookies:", document.cookie);
+        document.write("Acceso actual: " + currentAccess);  // Mostrar la fecha actual
+    </script>
+</body>
+</html>
