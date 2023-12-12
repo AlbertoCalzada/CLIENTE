@@ -48,5 +48,3 @@ onmouseover El ratón se mueve sobre un elemento.
 onmouseup Se libera un botón del ratón.
 onresize Se redimensiona una ventana o frame.
 onselect Se selecciona un texto.
-onunload El usuario abandona una página.
-
