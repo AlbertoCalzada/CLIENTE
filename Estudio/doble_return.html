@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Eventos</title>
+    <script type="text/javascript">
+        function Avisa() {
+            var acepta = confirm("Atención: se van a limpiar los datos del formulario");
+            return acepta;
+        }
+    </script>
+</head>
+
+<body>
+
+    <form name='miform' action="./doble_return.html" onreset="return Avisa()">
+        Nombre: <input name="nom" type='text' size='40'>
+        Edad: <input name="ed" type='text' size='4'><br>
+        DNI: <input name="dni" type='text' size='10'><br> <br>
+        <input type='reset' value='Limpiar'>
+        <input type='submit' value='Enviar'>
+		<button onclick="abrirventana()">Ventana</button>
+    </form>
+
+	<script >
+		function abrirventana() {
+			window.open("../paralumnos/mostrandoRobot.html","miwin","width=300,height=150,scrollbars=yes")
+		}
+		
+	</script>
+</body>
+
+</html>

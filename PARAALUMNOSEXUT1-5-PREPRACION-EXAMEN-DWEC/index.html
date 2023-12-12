@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avatares para los empleados de empresas</title>
+    <script src="./js/functions.js"></script>
+    <link rel="stylesheet" href="./style/index.css">
+</head>
+
+<body>
+    <h1>Avatares para los empleados de empresas</h1>
+    <fieldset>
+        <legend>DATOS DEL AVATAR</legend>
+        <form action="index.html" method="POST" onsubmit="return validarFormulario();">
+            <div>
+                <div>
+                    <label for="name">Nombre: </label>
+                    <input type="text" name="name" id="name">
+                    <p id="errornombre" class="error"></p>
+                </div>
+                <div>
+                    <label for="surname">Apellido: </label>
+                    <input type="text" name="surname" id="surname">
+                    <p id="errorapellido" class="error"></p>
+                </div>
+                <div>
+                    <label for="email">Email: </label>
+                    <input type="email" name="email" id="email">
+                    <p id="erroremail" class="error"></p>
+                </div>
+                <div>
+                    <label for="tel">Teléfono: </label>
+                    <input type="tel" name="tel" id="tel">
+                    <p id="errortel" class="error"></p>
+                </div>
+            </div>
+    </fieldset>
+    <fieldset>
+        <legend>DATOS EMPRESA</legend>
+        <div>
+            <div>
+                <label for="empresa">Empresa</label>
+                <input type="text" name="empresa" id="empresa">
+                <p id="errorempresa" class="error"></p>
+            </div>
+            <div>
+                <label for="cargo">Cargo que ocupa</label>
+                <select name="cargo" id="cargo">
+                    <option value="cargoocupa">Selecciona el cargo que ocupa</option>
+                    <option value="jefe">Jefe</option>
+                    <option value="director">Director</option>
+                    <option value="ceo">CEO</option>
+                    <option value="empleado">Empleado</option>
+                </select>
+                <p id="errorcargo" class="error"></p>
+            </div>
+        </div>
+        <div>
+            <input type="submit" value="Enviar">
+        </div>
+        </form>
+    </fieldset>
+    <div>
+
+    </div>
+    <div class="images">
+        <img src="./img/2.jpg" alt="img2">
+        <img src="./img/3.jpg" alt="img3">
+        <img src="./img/4.jpg" alt="img4">
+        <img src="./img/5.jpg" alt="img5">
+    </div>
+</body>
+
+</html>

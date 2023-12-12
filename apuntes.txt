@@ -1,0 +1,52 @@
+-atributo onreset limpiar datos
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Eventos</title>
+    <script type="text/javascript">
+        function Avisa() {
+            var acepta = confirm("Atención: se van a limpiar los datos del formulario");
+            return acepta;
+        }
+    </script>
+</head>
+
+<body>
+
+    <form name='miform' action="./doble_return.html" onreset="return Avisa()">
+        Nombre: <input name="nom" type='text' size='40'>
+        Edad: <input name="ed" type='text' size='4'><br>
+        DNI: <input name="dni" type='text' size='10'><br> <br>
+        <input type='reset' value='Limpiar'>
+        <input type='submit' value='Enviar'>
+    </form>
+
+</body>
+
+</html>
+
+-abrir ventana
+
+miPopup = window.open("prefijos.html","miwin","width=300,height=150,scrollbars=yes")
+
+onblur Un elemento pierde el foco.
+onchange El contenido de un campo cambia.
+onclick Se hace click con el ratón en un objeto.
+ondblclick Se hace doble click con el ratón sobre un objeto.
+onerror Ocurre algún error cargando un documento o una imagen.
+onfocus Un elemento tiene el foco.
+onkeydown Se presiona una tecla del teclado.
+onkeypress Se presiona una tecla o se mantiene presionada.
+onkeyup Cuando soltamos una tecla.
+onload Una página o imagen terminaron de cargarse.
+onmousedown Se presiona un botón del ratón.
+onmousemove Se mueve el ratón.
+onmouseout Movemos el ratón fuera de un elemento.
+onmouseover El ratón se mueve sobre un elemento.
+onmouseup Se libera un botón del ratón.
+onresize Se redimensiona una ventana o frame.
+onselect Se selecciona un texto.
+onunload El usuario abandona una página.
+

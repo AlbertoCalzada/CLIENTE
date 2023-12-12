@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0080)http://www.desarrolloweb.com/articulos/ejemplos/javascript2/ejemplo-prefijo.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-15">
+	<title>Formulario prefijos</title>
+<script>
+var miPopup
+function abreVentana(){
+	miPopup = window.open("prefijos.html","miwin","width=300,height=150,scrollbars=yes")
+	miPopup.focus()
+}
+</script>
+</head>
+<body>
+
+<form name="formul">
+<table cellspacing="3" cellpadding="3" border="0">
+<tbody><tr>
+    <td align="center">Prefijo</td>
+    <td align="center">N�mero</td>
+</tr>
+<tr>
+    <td align="center">
+		<input type="text" name="prefijo" value="+" size="3" maxlength="3">
+		<input type="Button" value="?" onclick="abreVentana()">
+	</td>
+    <td align="center">
+		<input type="text" name="numero" value="" size="10" maxlength="10">
+	</td>
+</tr>
+</tbody></table>
+</form>
+
+
+
+</body></html>
