@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="functions.js"></script>
+    <style>
+        legend {
+            font-weight: bold;
+        }
+
+        .errores {
+            color: red;
+        }
+        @font-face {
+            font-family: 'nueva';
+            src: url(./nueva.ttf);
+        }
+        h1{
+            font-family: 'nueva';
+            text-align: center;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>Aplicación para la reserva de Comaat Laser y Paint Ball</h1>
+    <fieldset>
+        <legend>
+            Los campos marcado con * son obligatorios
+        </legend>
+        <form action="./index.html" method="POST" onsubmit="return validarFormulario();">
+            <div>
+                <div>
+                    <label for="email">Email*</label>
+                    <input type="text" name="email" id="email">
+                </div>
+                <div>
+                    <label for="nombre">Nombre y Apellidos*</label>
+                    <input type="text" id="nombre">
+                </div>
+                <fieldset>
+                    <legend>
+                        Datos de la reserva
+                    </legend>
+                    <div>
+                        <label for="asistentes">Nº de asistentes*</label>
+                        <input type="number" id="asistentes">
+                    </div>
+                    <div>
+                        <label for="fecha">Fecha de reserva*</label>
+                        <input type="date" name="fecha" id="fecha">
+                    </div>
+                    <div>
+                        <label for="hora">Hora de la reserva*</label>
+                        <input type="text" id="hora">
+                        
+                        <a href=""><button onclick="info()">Horarios posibles</button></a>
+                        <p id="infoemail"></p>
+                    </div>
+                    <div>
+                        <label for="">Equipacion</label>
+                        <select name="equipacion" id="equipacion">
+                            <option value="Laser Combat Juego">Laser Combat Juego</option>
+                            <option value="Laser Combat Celebracion">Laser Combat Celebracion</option>
+                            <option value="Paint Ball">Paint Ball</option>
+                            <option value="Paint Ball Cumpleaños Infantil">Paint Ball Infantil</option>
+                        </select>
+
+                    </div>
+                    <br>
+                    <div>
+                        
+                        <img src="./lasercombat.jpg" alt="lasercombat" id="lasercombat">
+                        <img src="./lasercombatjuego.jpg" alt="lasercombatjuego" id="lasercombatjuego"  hidden>
+                        <img src="./lasercombatpaintball.jpg" alt="paintball" id="paintball" hidden>
+                        <img src="./lasercombatpaintballinfantil.jpg" alt="infantil" id="infantil" hidden>
+                        
+                    </div>
+                </fieldset>
+                <div>
+                    <input type="checkbox" name="compremetido" id="compremetido">
+                    <label for="">Me comprometo a liberar la sala en caso de cancelar o posponer la reunion*</label>
+
+                </div>
+            </div>
+
+    </fieldset>
+    <input type="submit" value="Enviar">
+    </form>
+
+    <a href="./reservacombat.html">Ver reserva</a>
+
+    <div class="errores">
+        <p id="erroremail"></p>
+        <p id="errornombre"></p>
+        <p id="errorasistentes"></p>
+        <p id="errorfecha"></p>
+        <p id="errorhora"></p>
+        <p id="errorcheckbox"></p>
+    </div>
+</body>
+
+</html>
