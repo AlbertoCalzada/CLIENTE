@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recorrer Árbol HTML</title>
+</head>
+<body>
+
+  
+
+  <script>
+    // Funcion para recorrer el arbol
+    function recorrerArbol(node, level) {
+      // Muestra el tipo de nodo usando alert
+      alert('Nodo: ' + node.nodeName + ', Tipo: ' + node.nodeType + ', Nivel: ' + level);
+
+      // Recorre los nodos hijos
+      for (let i = 0; i < node.childNodes.length; i++) {
+        recorrerArbol(node.childNodes[i], level + 1);
+      }
+    }
+
+    // Obtén el nodo raíz del documento
+    const nodoRaiz = document.documentElement;
+
+ 
+    recorrerArbol(nodoRaiz, 0);
+  </script>
+
+</body>
+</html>
