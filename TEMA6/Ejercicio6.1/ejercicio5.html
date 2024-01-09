@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5</title>
+    <style>
+        table {
+            border: 1px solid black;
+            width: 500px;
+            height: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <table id="tabla">
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </table>
+    <p id="resultado">
+
+    </p>
+    <script>
+        var colores = ["blue", "yellow", "pink", "red", "green", "purple", "orange"];
+        var notas = ["Do", "Re", "Mi", "Fa", "Sol", "La", "Si", "Do"];
+        var tabla = document.getElementById("tabla");
+
+        var tdGrupo = tabla.getElementsByTagName("td");
+
+        for (let i = 0; i < tdGrupo.length; i++) {
+            tdGrupo[i].style.backgroundColor = colores[i];
+
+            if (i == tdGrupo.length - 1) {
+                tdGrupo[i].style.backgroundColor = "blue";
+            }
+        }
+        //añadir nota musical
+        tdGrupo.addEventListener("mouseover", (event) => 
+        { 
+
+        });
+    </script>
+</body>
+
+</html>

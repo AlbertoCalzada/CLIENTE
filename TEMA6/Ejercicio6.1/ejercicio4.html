@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4</title>
+    <style>
+        div {
+            width: 50px;
+        }
+
+        p:nth-child(odd) {
+            background-color: red;
+            border: 1px solid black;
+        }
+
+        p:nth-child(even) {
+            background-color: green;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="colores">
+        <p>Cell 1</p>
+        <p>Cell 2</p>
+        <p>Cell 3</p>
+        <p>Cell 4</p>
+        <p>Cell 5</p>
+        <p>Cell 6</p>
+        <button onclick="cambiarEstilo()">Cambiar estilo</button>
+    </div>
+
+    <script>
+        function cambiarEstilo() {
+            var colores = ["blue", "yellow", "pink", "red", "green", "purple", "orange", "cyan", "magenta", "brown"];
+
+            // Función para obtener un color aleatorio del array
+            function obtenerColorAleatorio() {
+                var indiceAleatorio = Math.floor(Math.random() * colores.length);
+                return colores[indiceAleatorio];
+            }
+
+            var divColores = document.getElementById("colores");
+
+            var parrafos = divColores.getElementsByTagName("p");
+            console.log(parrafos);
+
+            var colorPares=obtenerColorAleatorio();
+            var colorImpares=obtenerColorAleatorio();
+
+            for (var i = 0; i < parrafos.length; i++) {
+                if (i % 2 !== 0) //pares
+                {
+                    parrafos[i].style.backgroundColor = colorPares;
+                } else {
+                    parrafos[i].style.backgroundColor = colorImpares;
+                }
+            }
+
+        }
+    </script>
+</body>
+
+</html>

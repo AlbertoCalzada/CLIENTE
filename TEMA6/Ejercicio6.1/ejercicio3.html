@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3</title>
+</head>
+
+<body>
+    <p id="numeroenlaces">
+
+    </p>
+    <p id="lugarApuntado">
+
+    </p>
+    <p id="ultimoParrafo">
+        Numero de enlaces del tercer parrafo:
+    </p>
+    <div id="grupo">
+
+
+        <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias voluptate voluptatem ut fuga pariatur?
+            Iusto
+            pariatur recusandae autem fugiat commodi reprehenderit natus, corporis, quasi possimus id, quibusdam
+            asperiores
+            atque aliquid!
+            Ex fugit, deleniti blanditiis voluptas vel beatae hic iste iusto neque facilis exercitationem perferendis
+            facere
+            possimus quidem aliquid fuga? In amet esse fugit numquam officiis labore voluptate, quos eligendi
+            perspiciatis?
+            Ipsa provident inventore harum <a href="">possimus quaerat!</a> possimus non recusandae corporis voluptas
+            quas
+            quos id, eum quasi omnis.
+            Explicabo eligendi ducimus minus adipisci neque, eaque maiores ab aut, nihil tenetur ut distinctio vero?
+            Odio, libero ducimus. Autem reiciendis <a href="">possimus quaerat!</a> consectetur aperiam quos similique
+            sequi, veritatis excepturi vero dicta
+            quia cumque deleniti distinctio eveniet obcaecati totam ad inventore corrupti ab! Voluptas magni quod
+            cupiditate
+            quo.
+        </p>
+        <p>
+            Nesciunt id illo <a href="">possimus quaerat!</a> Cum corporis quia at minima quisquam facere a nisi
+            doloremque
+            commodi, earum
+            qui nemo, delectus fugiat laborum. Optio perferendis modi, minima quos dolor ex laudantium.
+            Commodi odit quidem, at amet qui sunt cumque. Voluptatum perspiciatis quis dolore odit harum similique.
+            Recusandae asperiores, placeat, earum quisquam inventore maiores fugiat itaque ipsum magnam, sequi
+            voluptates
+            eos animi!
+            Eius atque temporibus inventore adipisci architecto cumque laborum iste debitis laboriosam reiciendis
+            voluptate
+            illum accusantium optio, quasi consequatur. Aut eius animi deserunt necessitatibus pariatur tenetur earum,
+            et
+            quibusdam officia voluptatem.
+            Voluptatum illum alias <a href="http://www.google.com">possimus quaerat!</a>
+            vel nemo quasi mollitia eius eaque
+            dignissimos vero,
+            nobis laboriosam atque, est sit!
+        </p>
+        <p>
+
+
+            Illum illo quos, reprehenderit sit deleniti animi. Aut, repudiandae voluptatum quos incidunt impedit eius.
+            Illum architecto nihil reiciendis vitae. Blanditiis nesciunt ducimus quas voluptatibus eligendi id tempora
+            assumenda mollitia repellendus exercitationem illo nisi voluptates, labore nihil provident ipsum repellat
+            perferendis nobis itaque pariatur? Unde.
+            Aut alias illo asperiores, dolor placeat libero dolore repellat tempore quae, itaque odit doloribus rerum
+            minima
+            eveniet modi quos ex expedita ut cum corrupti reprehenderit deserunt! Velit, corrupti. Facilis,
+            perspiciatis.
+            Nostrum obcaecati sunt animi quas modi odio, sapiente, voluptatum officia dolorum dolorem facere temporibus,
+            molestias accusantium quisquam id voluptatibus aspernatur ratione magni repellendus! Laudantium dolorum quae
+            suscipit doloremque nesciunt autem? <a href="">possimus quaerat!</a>
+            Dolore, iste molestias iusto voluptatibus ipsam voluptatem sed obcaecati dolores recusandae facilis dolorem
+            expedita quisquam consequuntur fugiat nulla nostrum ducimus! Nobis veritatis eius voluptate nisi, autem
+            placeat
+            modi sint minima!
+            Sequi accusantium ex illum? Veritatis officiis maiores sapiente impedit vitae cum distinctio voluptatibus ab
+            nobis ad rem eum, quod sed perspiciatis iste unde exercitationem voluptates! At harum officia similique id!
+            Aspernatur ipsam molestias autem nulla qui illum dolorem ea incidunt quos. Provident at quibusdam aliquam ut
+            dolorum odio et cum impedit delectus, quos asperiores quaerat culpa illo eaque ducimus tenetur!
+            Cupiditate perspiciatis, eligendi odio nulla minus doloremque sequi iure quasi! Obcaecati incidunt
+            asperiores
+            veritatis suscipit ducimus. Nisi ut vero nemo culpa at ad, dolore quibusdam ab nam quia possimus enim.
+        </p>
+    </div>
+    <script>
+        const grupo = document.getElementById("grupo");
+        const paragraphs = grupo.getElementsByTagName("p");
+
+        // Numero de enlaces
+        const allLinks = grupo.getElementsByTagName("a");
+        console.log(allLinks);
+        var numeroenlaces = document.getElementById("numeroenlaces");
+        numeroenlaces.innerHTML = "Numero de enlaces =" + allLinks.length;
+
+        //Apuntar a 
+        var penultimoEnlace = allLinks.length - 2; //penultimo
+
+        var lugarApuntado = allLinks[penultimoEnlace];
+        var urlPenultimoEnlace = lugarApuntado.href;
+
+        var lugarApuntadohtml = document.getElementById("lugarApuntado");
+        lugarApuntadohtml.innerHTML = "Penúltimo enlace apunta a: " + urlPenultimoEnlace;
+
+        //Numero enlaces tercer parrafo
+
+        //primero vamos a sacar el numero de parrafos
+
+        const parrafos = grupo.getElementsByTagName("p");
+
+        var ultimoParrafo = parrafos[parrafos.length - 1]; // Obtener el último párrafo
+        var numeroEnlacesUltimoParrafo = ultimoParrafo.getElementsByTagName("a");
+
+        var ultimoParrafohtml = document.getElementById("ultimoParrafo");
+        ultimoParrafohtml.innerHTML = "Numero de enlaces del tercer párrafo: " + numeroEnlacesUltimoParrafo.length;
+
+
+    </script>
+</body>
+
+</html>
