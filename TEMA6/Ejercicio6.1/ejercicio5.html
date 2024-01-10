@@ -16,14 +16,16 @@
 
 <body>
     <table id="tabla">
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
     </table>
     <p id="resultado">
 
@@ -34,19 +36,21 @@
         var tabla = document.getElementById("tabla");
 
         var tdGrupo = tabla.getElementsByTagName("td");
-
+        var resultado = document.getElementById("resultado");
         for (let i = 0; i < tdGrupo.length; i++) {
             tdGrupo[i].style.backgroundColor = colores[i];
 
             if (i == tdGrupo.length - 1) {
                 tdGrupo[i].style.backgroundColor = "blue";
             }
-        }
-        //añadir nota musical
-        tdGrupo.addEventListener("mouseover", (event) => 
-        { 
 
-        });
+            
+            tdGrupo[i].addEventListener("mouseover", (event) => 
+            {
+                resultado.innerHTML += notas[i] + "-";
+            });
+        }
+
     </script>
 </body>
 
