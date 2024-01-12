@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script language="javascript" src="lib/jquery-3.1.1.js"></script>
+	<script language="javascript">
+	$(document).ready(function(){
+   		$("#marca").on("change", function () {
+           $("#marca option:selected").each(function () {
+            elegido=$(this).val();
+            $.post("php/Ej5-modelos.php", { elegido: elegido }, function(data){
+            $("#modelo").html(data);
+            });            
+        });
+   })
+});
+</script>
+</head>
+<body>
+<select name="marca" id="marca">
+	<option value="1">Renault</option>
+	<option value="2">Seat</option>
+	<option value="3">Peugeot</option>
+</select>	
+<select name="modelo" id="modelo">
+	<option value="">Selecciona antes un fabricante</option>
+</select>
+</body>
+</html>
+
+

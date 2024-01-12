@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <style>
+        header {
+            color: white;
+            background-color: blue;
+            width: 100%;
+            height: 150px;
+        }
+
+        h4 {
+            background-color: mediumblue;
+            color: whitesmoke;
+        }
+
+        .tabla2 {
+            background-color: lightskyblue;
+            width: 95%;
+        }
+
+        .tabla1 {
+            background-color: lightskyblue;
+            width: 15%;
+            float: right;
+            margin-right: 3%;
+            margin-top: -2%;
+        }
+
+        #respuesta {
+            width: 45%;
+        }
+
+        #vuelosIda {
+            width: 90%;
+            background-color: white;
+            text-align: center;
+
+        }
+
+        #vuelosIdaVuelta {
+            width: 90%;
+            background-color: white;
+            text-align: center;
+        }
+
+        th {
+            width: 18%;
+            background-color: lightblue;
+            color: blue;
+            text-align: left;
+        }
+
+        td {
+            width: 14%;
+        }
+
+        .div {
+            width: 45%;
+        }
+
+        .flex {
+            display: flex;
+            flex-wrap: nowrap;
+        }
+
+    </style>
+    <script type="text/javascript" src="jquery-3.4.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            mostrarOrigenes();
+            $("#origen").change(mostrarDestinos);
+            $("#soloIda").click(function() {
+                $("#fechRegreso").hide("fast");
+                $("#fr").hide("fast");
+                $("#buscarVuelo").click(disponibilidadVuelosIda);
+            });
+            $("#idaVuelta").click(function() {
+                $("#fr").show("fast");
+                $("#fechRegreso").show("fast");
+                $("#buscarVuelo").click(disponibilidadIdaVuelta);
+            });
+        });
+
+        function mostrarDestinos() {
+            var origen = $("#origen").val();
+            var peticion = $.ajax({
+                url: "recogeDestinos.php",
+                type: "POST",
+                async: true, // no es obligario es asincrono por defecto
+                data: { //Variable que vamos a mandar al servidor
+                    origen: origen
+                },
+                success: function(data) { //cuando nos devuelve una respuesta favorable entra en el success
+                    $("#destino").html(peticion.responseText);
+                }
+            })
+        }
+
+        function mostrarOrigenes() {
+            var peticion = $.ajax({
+                url: "recogeOrigenes.php",
+                type: "POST",
+                async: true, // no es obligario es asincrono por defecto
+                data: { //Variable que vamos a mandar al servidor
+                },
+                success: function() { //cuando nos devuelve una respuesta favorable entra en el success
+                    $("#origen").html(peticion.responseText);
+                }
+            })
+        }
+
+        function disponibilidadVuelosIda() {
+            var origen = $('#origen').val();
+            var destino = $('#destino').val();
+            var fechaSalida = $('#fechSalida').val();
+            var adultos = $("#adultos").val();
+            var niños = $("#niños").val();
+            var peticion = $.ajax({
+                url: "disponibilidadIda.php",
+                type: "POST",
+                async: true,
+                data: {
+                    origen: origen,
+                    destino: destino,
+                    fechaSalida: fechaSalida,
+                    adultos: adultos,
+                    niños: niños
+                },
+                success: function(data) {
+                    $('#respuesta').html(data);
+                }
+            });
+        }
+
+        function disponibilidadIdaVuelta() {
+            var origen = $('#origen').val();
+            var destino = $('#destino').val();
+            var fechaSalida = $('#fechSalida').val();
+            var fechaRegreso = $('#fechRegreso').val();
+            var adultos = $("#adultos").val();
+            var niños = $("#niños").val();
+            var peticion = $.ajax({
+                url: "disponibilidadIdaVuelta.php",
+                type: "POST",
+                async: true,
+                data: {
+                    origen: origen,
+                    destino: destino,
+                    fechaSalida: fechaSalida,
+                    fechaRegreso: fechaRegreso,
+                    adultos: adultos,
+                    niños: niños
+                },
+                success: function(data) {
+                    $('#respuesta').html(data);
+                }
+            });
+        }
+
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="titulo">
+            <h1>VUELOS.COM</h1>
+        </div>
+        <table class="tabla1">
+            <form action="" method="post">
+                <tr>
+                    <td> <label for="usuario">Usuario</label></td>
+                    <td> <input type="text" id="usuario" name="usuario" placeholder="usuario"></td>
+                </tr>
+                <tr>
+                    <td> <label for="contraseña">Contraseña</label></td>
+                    <td> <input type="password" id="contraseña" name="contraseña"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="submit" name="entrar" id="entrar" value="Entrar"></td>
+                </tr>
+
+            </form>
+        </table>
+
+    </header>
+    <article class="flex">
+        <div class="div">
+            <h3>Buscador de vuelos:</h3>
+            <table class="tabla2">
+                <tr>
+                    <td>Tipo:</td>
+                    <td><input type="radio" name="tipo" id="soloIda" value="ida">Ida</td>
+                    <td><input type="radio" name="tipo" id="idaVuelta" value="idavuelta">Ida y vuelta</td>
+                </tr>
+                <tr>
+                    <td><label for="origen">Origen</label></td>
+                    <td>
+                        <select name="origen" id="origen" required>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="destino">Destino</label></td>
+                    <td>
+                        <select name="destino" id="destino"></select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Fecha de salida:</td>
+                    <td colspan="2">
+                        <input type="date" name="fechSalida" id="fechSalida">
+                    </td>
+                </tr>
+                <tr>
+                    <td id="fr">Fecha de regreso:</td>
+                    <td colspan="2">
+                        <input type="date" name="fechRegreso" id="fechRegreso">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Pasajeros</td>
+                    <td>
+                        Adultos:
+                        <select id="adultos">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </td>
+                    <td>
+                        Niños:
+                        <select id="niños">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="button" name="buscarVuelo" id="buscarVuelo" value="Buscar Vuelo"></td>
+                </tr>
+                <!--<tr><th colspan="3">Preferencias</th></tr>
+            <tr>
+                
+                <td>Ordenar vuelos por:</td>
+                <td>
+                    Precio<select id="orden">
+                        <option value="precio">Precio</option>
+                        <option value="clase">Clase</option>
+                    </select> </br></br>
+                    Clase<select id="clase">
+                        <option value="Turista">Turista</option>
+                        <option value="Premium">Premium</option>
+                    </select>
+                </td><td> 
+                    Precios<select id="precio">
+                        <option value="1000">Hasta 1000€</option>
+                        <option value="2000">Hasta 2000€</option>
+                        <option value="3000">Hasta 3000€</option>
+                    </select>
+                    </br></br>
+                    Numero de resultados a mostrar:
+                    <select id="result">
+                        <option value="3">3 Resultados</option>
+                        <option value="5">5 Resultados</option>
+                        <option value="10">Mas de 5 resultados</option>
+                    </select></td>
+            </tr>-->
+            </table>
+        </div>
+        <div id="respuesta">
+
+        </div>
+    </article>
+</body>
+
+</html>

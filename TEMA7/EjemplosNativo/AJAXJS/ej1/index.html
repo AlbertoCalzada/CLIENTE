@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<script>
+	function CargarDoc() {
+		var xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+				document.getElementById("demo").innerHTML =
+					this.responseText;
+			}
+		};
+		xhttp.open("GET", "ajax_info.txt", true);
+		xhttp.send();
+	}
+
+</script>
+
+<head>
+
+
+</head>
+
+<body>
+
+	<div id="demo">
+		<h2>Hacer que AJAX cambie este texto</h2>
+		<button type="button" onclick="CargarDoc()">Cambiar contenido</button>
+	</div>
+
+</body>
+
+</html>

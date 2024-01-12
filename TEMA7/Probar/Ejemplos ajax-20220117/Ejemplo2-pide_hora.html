@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Pide la hora al servidor mediante Ajax</title>
+	<style>		
+		.cargando{
+			width: 128px; height: 128px;
+			background-image: url(img/slideloading.gif);
+		}
+	</style>
+	<script src="lib/jquery-3.1.1.js"></script>
+	<script>
+		$(document).ready(function(){
+			$("#ok").on("click",function(){
+				//$("div.hora").load("php/ajax.php");
+				$.ajax({
+					beforeSend: function() {        
+						$("div.hora").text("");
+				        $(".load").addClass("cargando");
+    				}, 
+					url: "php/Ej2-devuelve_hora.php",
+					//timeout: 2000,
+					success: function(datos){
+						$("div.hora").text(datos)
+					},
+					error: function(){
+						console.log("Error")
+					},
+					complete: function(){
+						$(".load").removeClass("cargando");
+						console.log("Carga completada")
+					}
+				})
+			})
+		})
+	</script>
+</head>
+<body>
+	<button id="ok">Pedir la hora</button>
+	<div class="load"></div><div class="hora"></div>
+</body>
+</html>
