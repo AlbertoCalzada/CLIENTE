@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta saldo</title>
+    <script src="./modules/jquery-3.4.1.js"></script>
+    <link rel="stylesheet" href="./styles/index.css">
+    <script src="./js/index.js"></script>
+</head>
+
+<body>
+    <main>
+
+
+        <h3>Consulta de saldo de puntos(sin certificado)</h3>
+        <hr>
+        <p>Por favor, introduzca sus datos identificativos para acceder a su saldo de puntos</p>
+
+        <div class="form">
+            <div class="field"> <label for="dni">NIF/NIE</label>
+                <input type="text" id="dni" name="dni">
+            </div>
+            <div class="field"> <label for="clave">Clave de acceso</label>
+                <input type="password" name="clave" id="clave">
+            </div>
+
+            <button class="enter" onclick="getData()">Entrar</button>
+        </div>
+
+        <div class="show">
+            <h3>Saldo actual de puntos</h3>
+            <hr>
+            <div class="personal">
+                <p class="id"></p>
+                <p class="name"></p>
+                <p class="surname"></p>
+                <p class="lastname"></p>
+            </div>
+            <div class="amount">
+                <h1 class="points"></h1>
+            </div>
+        </div>
+    
+    </main>
+</body>
+
+</html>
