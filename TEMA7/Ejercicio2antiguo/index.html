@@ -18,31 +18,22 @@
         <hr>
         <p>Por favor, introduzca sus datos identificativos para acceder a su saldo de puntos</p>
 
-        <div class="form">
+        <form class="form">
+
+
             <div class="field"> <label for="dni">NIF/NIE</label>
-                <input type="text" id="dni" name="dni">
+                <input type="text" id="nif" name="nif">
             </div>
             <div class="field"> <label for="clave">Clave de acceso</label>
                 <input type="password" name="clave" id="clave">
             </div>
 
-            <button class="enter" onclick="getData()">Entrar</button>
-        </div>
+            <button class="enter" type="button" onclick="getData()">Entrar</button>
+        </form>
 
-        <div class="show">
-            <h3>Saldo actual de puntos</h3>
-            <hr>
-            <div class="personal">
-                <p class="id"></p>
-                <p class="name"></p>
-                <p class="surname"></p>
-                <p class="lastname"></p>
-            </div>
-            <div class="amount">
-                <h1 class="points"></h1>
-            </div>
-        </div>
-    
+        <div id="resultado"></div>
+
+
     </main>
 </body>
 
