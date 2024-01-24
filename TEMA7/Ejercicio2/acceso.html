@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceso</title>
+    <script src="./modules/jquery-3.4.1.js"></script>
+    <link rel="stylesheet" href="./styles/index.css">
+    <script src="./js/index.js"></script>
+    <style>
+        .margen {
+            margin: 0;
+        }
+        .hidden{
+            display:none;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <h3>Solicitud de clave de acceso</h3>
+        <hr>
+        <p>Verificación de datos personales</p>
+        <form class="form">
+
+
+            <div class="field"> <label for="dni">NIF/NIE</label>
+                <input type="text" id="nif" name="nif">
+            </div>
+            <div class="field"> <label for="fecha">Fecha de expedicion:</label>
+                <input type="date" name="fecha" id="fecha">
+
+            </div>
+            <div class="field margen">
+                <p>Ejemplo 15/04/2010</p>
+            </div>
+        </form>
+        <button type="button" onclick="Next()">>>Siguiente</button>
+        <a href="./index.html"><button type="button">>>Cancelar</button></a>
+        <div class="hidden">
+            <p>Se te ha generado una nueva clave, recuerda copiarla para no olvidarla</p>
+            <p id="aleatorio"></p>
+        </div>
+    </main>
+</body>
+
+</html>
