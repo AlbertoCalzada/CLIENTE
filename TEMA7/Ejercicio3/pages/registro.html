@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <script src="../modules/jquery-3.4.1.js"></script>
+    <link rel="stylesheet" href="../styles/index.css">
+    <script src="../js/registro.js"></script>
+
+</head>
+
+<body>
+    <div class="form">
+        <h3>Datos de alta del usuario</h3>
+        <label for="nombre">Nombre*</label>
+        <input type="text" id="nombre">
+        <label for="apellido1">Primer Apellido*</label>
+        <input type="text" id="apellido1">
+        <label for="apellido2">Segundo Apellido*</label>
+        <input type="text" id="apellido2">
+        <label for="fechaNacimiento">Fecha de nacimiento</label>
+        <input type="date" id="fechaNacimiento">
+        <label for="documentoIdentidad">Documento de identidad*</label>
+        <input type="text" id="documentoIdentidad">
+        <label for="nacionalidad">Nacionalidad</label>
+        <input type="text" id="nacionalidad">
+
+        <label for="genero">Genero*</label>
+        <input type="text" id="genero">
+        <label for="adscripcion">Tipo de adscripcion*</label>
+        <input type="text" id="adscripcion">
+        <label for="categoriaProfesional">Categoria profesional*</label>
+        <input type="text" id="categoriaProfesional">
+        <label for="entidad">Entidad*</label>
+        <input type="text" id="entidad">
+
+        <h3>Datos de contacto</h3>
+        <label for="email">Email*</label>
+        <input type="email" id="email" name="email">
+        <label for="telefono">Telefono</label>
+        <input type="text" id="telefono">
+        <label for="movil">Movil</label>
+        <input type="text" id="movil">
+        <button onclick="registrar()">Guardar</button>
+        <a href="./index.html"><button>Volver</button></a>
+    </div>
+    <div id="resultado">
+
+    </div>
+
+</body>
+
+</html>

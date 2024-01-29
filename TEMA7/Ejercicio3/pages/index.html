@@ -5,22 +5,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="../modules/jquery-3.4.1.js"></script>
     <link rel="stylesheet" href="../styles/index.css">
     <script src="../js/index.js"></script>
 </head>
 
 <body>
     <h3>Entrada</h3>
-    <form>
+    <div class="form">
         <label for="dni">DNI</label>
         <input type="text" name="dni" id="dni">
         <label for="">Contraseña</label>
         <input type="password" name="pass" id="pass">
         <button onclick="validar()">Iniciar sesión</button>
-    </form>
+    </div>
+
+    <div id="mensajeError"></div>
+    <div id="mensajeOk"></div>
+
     <a href="">¿Has olvidado la contraseña?</a>
     <br><br>
-    <button>Registro</button>
+    <a href="./registro.html"><button>Registro</button></a>
+    
+    <br>
+    <div id="resultado"></div>
+
 </body>
 
 </html>

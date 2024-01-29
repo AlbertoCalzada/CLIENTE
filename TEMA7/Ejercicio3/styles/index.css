@@ -1,7 +1,22 @@
-form label{
-    display:block;
+.form label {
+    display: block;
 }
-form{
-    margin-top:10px;
-    margin-bottom:30px;
+
+.form {
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+#mensajeError {
+    color: red;
+}
+
+#mensajeOk {
+    color: green;
+}
+
+#resultado
+{
+    font-weight: bold;
+    color:black;
 }
