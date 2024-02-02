@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monedero</title>
+    <link rel="stylesheet" href="../styles/index.css">
+    <script src="../js/index.js"></script>
+    <script src="../modules/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+    <div class="bgcolor">
+
+        <h3>Simulacion de un Monedero MegaCoins</h3>
+        <h4>Por favor , para operar identifiquese</h4>
+
+
+
+        <div class="form">
+            <label for="">Correo Electronico</label>
+            <input type="email" name="email" id="email">
+            <label for="">Contraseña</label>
+            <input type="password" name="pass" id="pass">
+            <button onclick="validar()">Enviar</button>
+        </div>
+        <div class="mensajeError" id="mensajeError"></div>
+        <p>Si no dispone de una cuenta en Megacoins pinche <a href="">aqui</a></p>
+        <div id="cookies"></div>
+        <div id="resultado"></div>
+
+        <div id="formOculto">
+            <label for="">Introduzca cantidad a ingresar</label><br>
+            <input type="number" name="saldo"><br>
+            <button onclick="aumentarSaldo()">Ok</button>
+        </div>
+        <div id="resultadoSaldo"></div>
+        <div class="cotizacion"></div>
+
+    </div>
+</body>
+
+</html>
