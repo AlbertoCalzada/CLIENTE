@@ -98,6 +98,20 @@
             sessionStorage.clear();
         }
 
+        function guardarNombre() {
+            // Obtener el valor del nombre desde el formulario
+            var nombre = document.getElementById('miFormulario').elements['alias'].value;
+
+            // Guardar el nombre en localStorage
+            localStorage.setItem('nombre', nombre);
+
+            // Establecer una cookie llamada 'test1' con valor 'Hola'
+            document.cookie = "test1=Hola";
+
+            // Guardar el nombre en sessionStorage
+            sessionStorage.setItem('nombre', nombre);
+        }
+
     </script>
 </body>
 
