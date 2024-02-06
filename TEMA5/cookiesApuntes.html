@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manejo de Cookies</title>
 </head>
+
 <body>
     <script type="text/javascript">
         // Función para crear una cookie
@@ -54,7 +56,49 @@
         // Debug: Muestra todas las cookies en la consola
         console.log("Todas las cookies:", document.cookie);
         document.write("Acceso actual: " + currentAccess);  // Mostrar la fecha actual
-        
+
+
+        // Función para almacenar un valor en localStorage
+        function setLocalStorageItem(key, value) {
+            localStorage.setItem(key, value);
+        }
+
+        // Función para obtener un valor de localStorage
+        function getLocalStorageItem(key) {
+            return localStorage.getItem(key);
+        }
+
+        // Función para eliminar un valor de localStorage
+        function removeLocalStorageItem(key) {
+            localStorage.removeItem(key);
+        }
+
+        // Función para borrar todos los elementos de localStorage
+        function clearLocalStorage() {
+            localStorage.clear();
+        }
+
+        // Función para almacenar un valor en sessionStorage
+        function setSessionStorageItem(key, value) {
+            sessionStorage.setItem(key, value);
+        }
+
+        // Función para obtener un valor de sessionStorage
+        function getSessionStorageItem(key) {
+            return sessionStorage.getItem(key);
+        }
+
+        // Función para eliminar un valor de sessionStorage
+        function removeSessionStorageItem(key) {
+            sessionStorage.removeItem(key);
+        }
+
+        // Función para borrar todos los elementos de sessionStorage
+        function clearSessionStorage() {
+            sessionStorage.clear();
+        }
+
     </script>
 </body>
+
 </html>
