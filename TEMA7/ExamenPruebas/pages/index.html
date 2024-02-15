@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen</title>
+    <link rel="stylesheet" href="../styles/index.css">
+    <script src="../js/index.js"></script>
+    <script src="../modules/jquery-3.4.1.js"></script>
+    <script src="../js/buttons.js"></script>
+</head>
+
+<body>
+    <div id="mensajeError"></div>
+    <fieldset>
+        <legend>Login de Usuario</legend>
+        <div class="form">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email">
+            <label for="pass">Password</label>
+            <input type="password" name="pass" id="pass">
+            <button onclick=signin()>Iniciar Sesion</button>
+        </div>
+        <div class="buttons">
+            <button onclick="forgetShow()">Recordar</button>
+            <button onclick="signupShow()">Registrarse</button>
+            <button onclick="updateShow()">Actualizar</button>
+            <button onclick="deletedShow()">Baja</button>
+        </div>
+    </fieldset>
+    <div class="resultado">
+        
+    </div>
+    <div class="successSignIn">
+        <fieldset>
+            <legend>Usuario Registrado</legend>
+            <p id="iName"></p>
+            <p id="iGender"></p>
+            <p id="iDate"></p>
+            <p id="iCcid"></p>
+        </fieldset>
+    </div>
+    <div class="calculator">
+        <fieldset>
+            <legend>Calculadora de CCID</legend>
+            <label for="kg">RMB=66,473 +[13,752 x peso corporal</label>
+            <input type="number" name="kg" id="kg">
+            <label for="">+[5,0033 x alt. cm</label>
+            <input type="number" name="cm" id="cm">
+            <label for="">- [6,755 x edad 33 ]=</label>
+            <div class="basal">
+                <p></p>
+            </div>
+            <select name="activity" id="activity">
+                <option value="">1 para una persona inactiva</option>
+                <option value="">1.2 para una persona con actividad física ligera</option>
+                <option value="">1.4 para una persona con actividad media</option>
+                <option value="">1.6 para una persona muy activa </option>
+                <option value="">1.8 para una persona de actividad extrema</option>
+            </select>
+            <div class="finalKcal">
+                <p></p>
+            </div>
+            <button onclick="getCcid()">Guardar CCID</button>
+        </fieldset>
+    </div>
+    <div class="signUp">
+        <fieldset>
+            <legend>Registro de Usuarios</legend>
+            <label for="rEmail">Email</label>
+            <input type="email" name="rEmail" id="rEmail">
+            <label for="rPass">Password</label>
+            <input type="password" name="rPass" id="rPass">
+            <label for="name">Nombre y Apellidos</label>
+            <input type="text" name="rName" id="rName">
+            <select name="rGender" id="rGender">
+                <option value="">Hombre</option>
+                <option value="">Mujer</option>
+            </select>
+            <label for="rDatebirth">Fecha Nacimiento</label>
+            <input type="date" name="rDatebirth" id="rDatebirth">
+            <button onclick=signup()>Enviar Registro</button>
+        </fieldset>
+    </div>
+    <div class="forget">
+        <fieldset>
+            <legend>Recordar Password</legend>
+            <label for="fEmail">Email</label>
+            <input type="email" name="fEmail" id="fEmail">
+            <label for="fDatebirth">Fecha Nacimiento</label>
+            <input type="date" name="fDatebirth" id="fDatebirth">
+            <button onclick=forget()>Enviar</button>
+        </fieldset>
+    </div>
+    <div class="update">
+        <fieldset>
+            <legend>Actualizacion Datos Usuario</legend>
+            <label for="uEmail">Email</label>
+            <input type="email" name="uEmail" id="uEmail">
+            <label for="uPass">Password</label>
+            <input type="password" name="uPass" id="uPass">
+            <label for="uName">Nombre y Apellidos</label>
+            <input type="text" name="uName" id="uName">
+            <select name="uGender" id="uGender">
+                <option value="">Hombre</option>
+                <option value="">Mujer</option>
+            </select>
+            <label for="uDatebirth">Fecha Nacimiento</label>
+            <input type="date" name="uDatebirth" id="uDatebirth">
+            <button onclick=update()>Actualizar Registro</button>
+        </fieldset>
+    </div>
+    <div class="deleted">
+        <fieldset>
+            <legend>
+                Baja Dato Usuario
+            </legend>
+            <label for="deleteEmail">Email:</label>
+            <input type="email" id="deleteEmail" name="deleteEmail">
+            <button onclick="deleted()">Dar de baja</button>
+        </fieldset>
+        <div class="successDeleted"></div>
+    </div>
+    
+    <div id="cookies">
+    </div>
+
+</body>
+
+</html>

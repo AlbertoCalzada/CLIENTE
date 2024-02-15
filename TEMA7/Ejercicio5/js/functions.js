@@ -1,4 +1,4 @@
-function signin(email, pass, response){
+function signin(email, pass, response){      //para autenticar al usuario
     for(let i = 0; i < response.length; i += 1)
         if(response[i]["correo"] == email)
         {
