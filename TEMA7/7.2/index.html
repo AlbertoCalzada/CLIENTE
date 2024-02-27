@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es" manifest="cache.manifest">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta de Saldo de Puntos</title>
+    <script src="./modules/jquery-3.4.1.js"></script>
+    <script src="./modules/main.js"></script>
+    <link rel="stylesheet" href="./styles/index.css">
+    <script>
+        // Función para obtener el valor actual de la cookie
+        function getCookieValue(cookieName) {
+            var name = cookieName + "=";
+            var decodedCookie = decodeURIComponent(document.cookie);
+            var cookieArray = decodedCookie.split(';');
+            for (var i = 0; i < cookieArray.length; i++) {
+                var cookie = cookieArray[i];
+                while (cookie.charAt(0) == ' ') {
+                    cookie = cookie.substring(1);
+                }
+                if (cookie.indexOf(name) == 0) {
+                    return cookie.substring(name.length, cookie.length);
+                }
+            }
+            return "";
+        }
+    
+        // Función para establecer el valor de la cookie
+        function setCookieValue(cookieName, value, expirationDays) {
+            var d = new Date();
+            d.setTime(d.getTime() + (expirationDays * 24 * 60 * 60 * 1000));
+            var expires = "expires=" + d.toUTCString();
+            document.cookie = cookieName + "=" + value + ";" + expires + ";path=/";
+        }
+    
+        // Función para manejar el contador de visitas
+        function actualizarContadorVisitas() {
+            var visitasAnteriores = parseInt(getCookieValue("contadorVisitas")) || 0;
+            var nuevoContador = visitasAnteriores + 1;
+            setCookieValue("contadorVisitas", nuevoContador, 30); // Almacena el contador por 30 días
+            $('#visitas').text(nuevoContador);
+        }
+    
+        // Llama a la función al cargar la página
+        $(document).ready(function () {
+            actualizarContadorVisitas();
+        });
+    </script>
+</head>
+
+<body>
+    <h1>Consulta de Saldo de Puntos</h1>
+    <form id="consultaForm">
+        <label for="nif">NIF/NIE:</label>
+        <input type="text" id="nif" name="nif" required>
+        <br>
+        <label for="clave">Clave de acceso:</label>
+        <input type="password" id="clave" name="clave" minlength="6" maxlength="6" required>
+        <br>
+        <button type="button" onclick="consultarSaldo()">Entrar</button>
+    </form>
+    <div id="resultado"></div>
+    <div class="solicitarButton">
+        <p>Solicitar clave de acceso</p>
+        <button onclick="solicitarClave()">Enviar</button>
+    </div>
+    <div id="solicitarClave">
+        <p>Verificacion de datos personales</p>
+        <form id="generarClaveForm">
+            <label for="nif2">NIF:</label>
+            <input type="text" name="nif2" id="nif2">
+            <br>
+            <label for="dateLicense">Fecha de expedición de la licencia o permiso</label>
+            <input type="date" name="dateLicense" id="dateLicense">
+            <br>
+            <button type="button" onclick="generarClave()">Generar clave</button>
+        </form>
+        <div id="nuevaClave"></div>
+    </div>
+    <div id="contadorVisitas">Número de visitas: <span id="visitas"></span></div>
+
+</body>
+
+</html>

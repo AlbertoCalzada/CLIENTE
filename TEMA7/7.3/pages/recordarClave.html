@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recordar Clave</title>
+    <script src="../modules/jquery-3.4.1.js"></script>
+    <script src="../modules/main.js"></script>
+    <link rel="stylesheet" href="./styles/index.css">
+</head>
+
+<body>
+    <h1>Recordar Clave</h1>
+    <form id="recordarClaveForm">
+        <label for="nifRecordar">NIF/NIE:</label>
+        <input type="text" id="nifRecordar" name="nifRecordar" required>
+
+        <label for="fechaExpedicion">Fecha de expedición:</label>
+        <input type="text" id="fechaExpedicion" name="fechaExpedicion" placeholder="DD/MM/YYYY" required>
+
+        <button type="button" onclick="recordarClave()">Siguiente</button>
+    </form>
+    <div id="resultado"></div>
+</body>
+
+</html>

@@ -1,0 +1,116 @@
+*{
+    box-sizing: border-box;
+    margin:0;
+}
+body{
+    height: 500px;
+}
+
+.inline{
+    background-color: rgb(39, 37, 37);
+}
+
+.header{
+    margin-top: 40px;
+    color:white;
+    background-color: black;
+    text-align: center;
+    font-size: 30px;
+}
+
+.mensajeBienvenida{
+    border:1px solid black;
+    text-align: center;
+    width: 600px;
+    margin: 40px auto;
+    
+}
+
+.consultaDatos
+{
+    border:1px solid black;
+    text-align: center;
+    width: 600px;
+    margin: 40px auto;
+    display: none;
+}
+
+.consultaDatos, label{
+    display: block;
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding:1%;
+    display: none;
+}
+
+img{
+    width: 200px;
+}
+
+footer{
+    color:white;
+    background-color: black;
+    text-align: center;
+    font-size: 15px;
+    margin-top: 100px;
+    margin-bottom:0;
+    padding:2%
+}
+
+#inicioSesion{
+    text-align: center;
+    border:1px solid black;
+    margin: 0 auto;
+    width: 1000px;
+}
+
+#inicioSesion{
+    display: none;
+}
+
+#resultado{
+    margin:auto;
+    text-align: center;
+}
+
+.registro{
+    display: none;
+    border:1px solid black;
+    text-align: center;
+    width: 600px;
+    margin: 40px auto;
+    
+}
+
+#registro{
+    display: none;
+}
+.registro, label{
+    display:block;
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding:1%;
+    
+}
+
+.registro p{
+    border: 1px solid black;
+    padding: 1%;
+    font-weight: bold;
+    margin:10px auto;
+}
+
+.olvidar{
+    border: 1px solid black;
+    padding: 1%;
+    text-align: center;
+    margin:10px auto;
+    width: 600px;
+    display: none;
+}

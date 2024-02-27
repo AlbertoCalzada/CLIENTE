@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="../modules/jquery-3.4.1.js"></script>
+  <script src="../modules/main.js"></script>
+  <link rel="stylesheet" href="../styles/signup.css">
+  <title>SICA - Registro de Usuario</title>
+</head>
+<body>
+  <h1>SICA - Sistema de Investigación Científica de Andalucía</h1>
+  <h2>Datos de alta del usuario</h2>
+  <hr>
+  <form id="registroForm">
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" required>
+
+    <label for="apellido1">Primer Apellido:</label>
+    <input type="text" id="apellido1" name="apellido1" required>
+
+    <label for="apellido2">Segundo apellido</label>
+    <input type="text" id="apellido2" name="apellido2" required>
+
+    <label for="fecha">Fecha de Nacimiento:</label>
+    <input type="date" id="fecha" name="fecha" required>
+
+    <label for="nif">NIF/NIE:</label>
+    <input type="text" id="nif" name="nif" required>
+
+    <label for="nacionalidad">Nacionalidad: </label>
+    <input type="text" name="nacionalidad" id="nacionalidad">
+
+    <label for="genero">Género: </label>
+    <input type="text" name="genero" id="genero">
+
+    <label for="adscripcion">Tipo de adscripción</label>
+    <input type="text" name="adscripcion" id="adscripcion">
+
+    <label for="categoria">Categoróia profesional: </label>
+    <input type="text" name="categoria" id="categoria">
+
+    <label for="entidad">Entidad: </label>
+    <input type="text" name="entidad" id="entidad">
+
+    <h2>Datos de contacto</h2>
+    <hr>
+
+    <label for="email">Correo Electrónico: </label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="telefono">Teléfono: </label>
+    <input type="tel" id="telefono" name="telefono" required>
+
+    <label for="movil">Móvil: </label>
+    <input type="tel" name="movil" id="movil">
+
+    <button id="registro" type="button" onclick="registrarUsuario()">Registrar</button>
+  </form>
+
+  <div id="resultado"></div>
+
+</body>
+</html>

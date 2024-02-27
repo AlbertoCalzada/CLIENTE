@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen</title>
+    <link rel="stylesheet" href="../styles/index.css">
+    <script src="../modules/jquery-3.6.0.min.js"></script>
+    <script src="../js/index.js"></script>
+</head>
+
+<body>
+    <div class="inline">
+
+        <button onclick="consulta()">Consulta</button>
+        <button onclick="alta()">Alta</button>
+        <button onclick="recordar()">Password</button>
+
+    </div>
+    <div class="header">
+        <p>Gestiona tu carnet joven CAM</p>
+    </div>
+
+    <div class="mensajeBienvenida">
+        <p>Bienvenido a la página de gestión de tu carnet joven</p>
+        <p>Consulta de datos</p>
+        <p>Introduce los campos de información necesarios para gestionar tu carnet</p>
+
+    </div>
+
+    <div class="consultaDatos">
+        <h2>Consulta de datos</h2>
+        <label for="nif">Número de NIF</label>
+        <input type="text" name="nif" id="nif">
+        <label for="pass">Código de acceso</label>
+        <input type="password" name="pass" id="pass">
+        <button onclick="validar()">Consultar</button>
+    </div>
+
+    <div class="registro" id="registro">
+        <h2>Registro de nuevo usuario</h2>
+        <p>Todos los campos son obligatorios</p>
+        <label for="rnif">Numero de NIF</label>
+        <input type="text" name="rnif" id="rnif" placeholder="NIF">
+        <label for="rname">Nombre y apellidos</label>
+        <input type="text" name="rname" id="rname" placeholder="Nombre y apellidos">
+        <label for="ranno">Año de nacimiento</label>
+        <input type="text" id="ranno" name="ranno" placeholder="AAAA">
+        <label for="rpass">Código de acceso</label>
+        <input type="password" name="rpass" id="rpass" placeholder="Codigo de acceso">
+        <button onclick="validarRegistro()">Registrarse</button>
+    </div>
+    <div class="olvidar">
+        <p>No recuerda su codigo de acceso?</p>
+        <p>Introduzca su NIF y haga click aqui:</p>
+        <label for="onif">Numero de NIF</label>
+        <input type="text" name="onif" id="onif" placeholder="NIF">
+        <button onclick="forget()">Recordar Clave</button>
+    </div>
+    <div id="mensajeError">
+
+    </div>
+    <div id="mensajeOk">
+
+    </div>
+    <div id="inicioSesion">
+        <p>Gracias joven <span id="name"></span>, naciendo en <span id="fecha"></span> por su colaboracion, ha entrado en el sorteo de un viaje a Japón para conocer sus constumbres.</p>
+        <p>Premio</p>
+        <img src="../img/JAPON.jpg" alt="japon">
+    </div>
+    <div id="resultado">
+
+    </div>
+    <div class="imagen">
+        <img src="../img/tarjeta-cjmadrid.png" alt="tarjetaCmadrid">
+    </div>
+
+    <footer>
+        <p>exDEWC 2024 Carnet Joven CAM</p>
+    </footer>
+       
+   
+</body>
+
+</html>

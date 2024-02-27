@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./modules/jquery-3.4.1.js"></script>
+    <script src="./modules/main.js"></script>
+    <link rel="stylesheet" href="./styles/index.css">
+<body>
+    <h1>SICA - Sistema de Investigación Científica de Andalucía</h1>
+    <a href="./pages/signup.html">Registro de usuarios</a>
+    <form id="loginForm">
+        <label for="nif">NIF/NIE:</label>
+        <input type="text" id="nif" name="nif" required>
+
+        <label for="clave">Clave:</label>
+        <input type="password" id="clave" name="clave" minlength="10" required>
+
+        <button type="button" onclick="iniciarSesion()">Iniciar Sesión</button>
+    </form>
+    <div id="resultado"></div>
+</body>
+
+</html>
